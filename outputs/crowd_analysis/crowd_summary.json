@@ -1,0 +1,26 @@
+{
+  "analysis": {
+    "total_frames": 1,
+    "final_count": 6,
+    "density_level": "low",
+    "density_persons_per_sqm": 0.12,
+    "zones": {
+      "0,0": 0,
+      "0,1": 0,
+      "0,2": 0,
+      "1,0": 1,
+      "1,1": 0,
+      "1,2": 0,
+      "2,0": 2,
+      "2,1": 1,
+      "2,2": 2
+    }
+  },
+  "stats": {
+    "count": 6,
+    "mean": 6.0,
+    "std": 0.0,
+    "peak": 6,
+    "trend": "stable"
+  }
+}
