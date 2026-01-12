@@ -1,0 +1,27 @@
+# Detection config
+detection:
+  model:
+    path: "yolov8n.pt"
+    device: "auto"
+  inference:
+    confidence_threshold: 0.5
+    iou_threshold: 0.45
+    image_size: 640
+  target_classes: [0, 2, 5, 7, 24, 26]
+
+# Frame extraction
+frame_extraction:
+  sampling_mode: "time"
+  time_interval: 1.0
+  frame_interval: 30
+
+# Tracking
+tracking:
+  iou_threshold: 0.5
+  movement_threshold: 20
+  static_threshold: 300
+  max_disappeared: 50
+
+# Output
+output:
+  output_dir: "outputs/cv_samples"

@@ -1,0 +1,120 @@
+{
+  "events": [
+    {
+      "event_id": "5c9ded17-3d3d-43d3-a83c-d47d0b04bc94",
+      "timestamp": "2026-01-12T14:50:59.587851Z",
+      "camera_id": "demo_camera",
+      "event_type": "object_detected",
+      "confidence": 0.8752,
+      "severity": "low",
+      "data": {
+        "class_name": "person",
+        "class_id": 0,
+        "bbox": {
+          "x": 978,
+          "y": 382,
+          "w": 301,
+          "h": 464
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "event_id": "b0f5e414-2fdb-4bc2-918f-734fac694919",
+      "timestamp": "2026-01-12T14:50:59.588008Z",
+      "camera_id": "demo_camera",
+      "event_type": "object_detected",
+      "confidence": 0.8565,
+      "severity": "low",
+      "data": {
+        "class_name": "person",
+        "class_id": 0,
+        "bbox": {
+          "x": 486,
+          "y": 507,
+          "w": 413,
+          "h": 342
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "event_id": "79ef3d41-ba4c-4c79-a857-66c5e36a790f",
+      "timestamp": "2026-01-12T14:50:59.588145Z",
+      "camera_id": "demo_camera",
+      "event_type": "object_detected",
+      "confidence": 0.8249,
+      "severity": "low",
+      "data": {
+        "class_name": "person",
+        "class_id": 0,
+        "bbox": {
+          "x": 0,
+          "y": 425,
+          "w": 140,
+          "h": 421
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "event_id": "510af71d-ffd2-44af-9c4c-262a22d5d10e",
+      "timestamp": "2026-01-12T14:50:59.588279Z",
+      "camera_id": "demo_camera",
+      "event_type": "object_detected",
+      "confidence": 0.7984,
+      "severity": "low",
+      "data": {
+        "class_name": "person",
+        "class_id": 0,
+        "bbox": {
+          "x": 727,
+          "y": 470,
+          "w": 288,
+          "h": 376
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "event_id": "90a526c7-314f-4758-8651-e8b62332a9f6",
+      "timestamp": "2026-01-12T14:50:59.588434Z",
+      "camera_id": "demo_camera",
+      "event_type": "object_detected",
+      "confidence": 0.6338,
+      "severity": "low",
+      "data": {
+        "class_name": "person",
+        "class_id": 0,
+        "bbox": {
+          "x": 143,
+          "y": 379,
+          "w": 128,
+          "h": 254
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "event_id": "a9bdbc4a-24cd-4432-bf28-849c12533013",
+      "timestamp": "2026-01-12T14:50:59.588513Z",
+      "camera_id": "demo_camera",
+      "event_type": "object_detected",
+      "confidence": 0.579,
+      "severity": "low",
+      "data": {
+        "class_name": "person",
+        "class_id": 0,
+        "bbox": {
+          "x": 61,
+          "y": 464,
+          "w": 374,
+          "h": 383
+        }
+      },
+      "metadata": {}
+    }
+  ],
+  "count": 6,
+  "generated_at": "2026-01-12T14:50:59.597111Z"
+}
