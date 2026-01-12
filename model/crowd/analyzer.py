@@ -228,6 +228,26 @@ class CrowdAnalyzer:
         stats = self.get_stats(window)
         return stats["mean"]
     
+    def get_smoothed_count(self, window_size: int = 5) -> float:
+        """Get exponentially smoothed count to reduce fluctuations."""
+        if not self._history:
+            return 0.0
+        
+        recent = list(self._history)[-window_size:]
+        if len(recent) < 2:
+            return float(recent[-1].count)
+        
+        # Exponential moving average
+        alpha = 2 / (len(recent) + 1)
+        ema = recent[0].count
+        for snap in recent[1:]:
+            ema = alpha * snap.count + (1 - alpha) * ema
+        return round(ema, 2)
+    
+    def get_history(self) -> List[CrowdSnapshot]:
+        """Get history for visualization."""
+        return list(self._history)
+    
     def reset(self) -> None:
         self._history.clear()
         self._last_surge_time = 0

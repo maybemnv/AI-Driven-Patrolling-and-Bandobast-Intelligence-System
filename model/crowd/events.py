@@ -118,5 +118,26 @@ class CrowdEventBuilder:
     def _zones_to_dict(self, zones: Dict) -> Dict[str, int]:
         return {f"{r},{c}": cnt for (r, c), cnt in zones.items()}
     
+    def calculate_priority(self, snapshot: CrowdSnapshot, surge: Optional[SurgeEvent] = None) -> int:
+        """Calculate event priority score (1-10)."""
+        score = 1
+        
+        # Density level adds 0-4
+        density_scores = {DensityLevel.LOW: 0, DensityLevel.MEDIUM: 1, DensityLevel.HIGH: 2, DensityLevel.CRITICAL: 4}
+        score += density_scores.get(snapshot.level, 0)
+        
+        # Count adds 0-2
+        if snapshot.count > 50:
+            score += 2
+        elif snapshot.count > 20:
+            score += 1
+        
+        # Surge adds 0-4
+        if surge:
+            surge_scores = {SurgeSeverity.MINOR: 1, SurgeSeverity.MODERATE: 2, SurgeSeverity.MAJOR: 4}
+            score += surge_scores.get(surge.severity, 0)
+        
+        return min(score, 10)
+    
     def reset(self) -> None:
         self._last_events.clear()

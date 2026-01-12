@@ -6,6 +6,13 @@ from model.crowd.analyzer import (
     SurgeSeverity,
     SurgeEvent,
 )
+from model.crowd.visualization import (
+    create_density_heatmap,
+    overlay_heatmap,
+    draw_zone_grid,
+    create_timeseries_chart,
+    save_heatmap,
+)
 
 __all__ = [
     "CrowdAnalyzer",
@@ -13,4 +20,9 @@ __all__ = [
     "DensityLevel",
     "SurgeSeverity",
     "SurgeEvent",
+    "create_density_heatmap",
+    "overlay_heatmap",
+    "draw_zone_grid",
+    "create_timeseries_chart",
+    "save_heatmap",
 ]
