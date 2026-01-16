@@ -8,6 +8,7 @@ from database.models import (
     Summary, SummaryType,
     create_db_engine, init_db, get_session,
 )
+from database.vectordb import VectorDB, get_vectordb
 
 __all__ = [
     "Base",
@@ -17,4 +18,5 @@ __all__ = [
     "PatrolSession", "PatrolStatus",
     "Summary", "SummaryType",
     "create_db_engine", "init_db", "get_session",
+    "VectorDB", "get_vectordb",
 ]

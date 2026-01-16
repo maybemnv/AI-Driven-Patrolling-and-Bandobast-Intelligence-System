@@ -25,3 +25,14 @@ tracking:
 # Output
 output:
   output_dir: "outputs/cv_samples"
+
+# Database
+database:
+  sqlite_url: "sqlite:///data/patrolling.db"
+  vectordb_dir: "data/vectordb"
+
+# Logging
+logging:
+  level: "INFO"
+  log_dir: "logs"
+  log_to_file: true

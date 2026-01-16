@@ -58,7 +58,7 @@ class Camera(Base):
     status = Column(Enum(CameraStatus), default=CameraStatus.ACTIVE)
     installation_date = Column(DateTime, nullable=True)
     last_active_at = Column(DateTime, nullable=True)
-    metadata = Column(JSON, default=dict)
+    extra_data = Column(JSON, default=dict)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
@@ -148,7 +148,7 @@ class Summary(Base):
     key_insights = Column(JSON, default=list)
     risk_score = Column(Float, default=0.0)
     generated_at = Column(DateTime, default=datetime.utcnow)
-    metadata = Column(JSON, default=dict)
+    extra_data = Column(JSON, default=dict)
     
     patrol_session = relationship("PatrolSession", back_populates="summaries")
     
