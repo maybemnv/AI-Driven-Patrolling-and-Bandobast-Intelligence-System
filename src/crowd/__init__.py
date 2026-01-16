@@ -1,12 +1,12 @@
 """Crowd subpackage."""
-from model.crowd.analyzer import (
+from src.crowd.analyzer import (
     CrowdAnalyzer,
     CrowdSnapshot,
     DensityLevel,
     SurgeSeverity,
     SurgeEvent,
 )
-from model.crowd.visualization import (
+from src.crowd.visualization import (
     create_density_heatmap,
     overlay_heatmap,
     draw_zone_grid,

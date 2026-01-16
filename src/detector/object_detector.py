@@ -7,7 +7,7 @@ from typing import Dict, List, Optional, Set, Tuple, Any
 import cv2
 import numpy as np
 
-from model.detector.model_loader import ModelLoader
+from src.detector.model_loader import ModelLoader
 
 
 @dataclass

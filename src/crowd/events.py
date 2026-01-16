@@ -1,8 +1,8 @@
 """Crowd event generation."""
 
 from typing import Dict, List, Optional
-from model.events.event import Event, EventBuilder, EventType, Severity
-from model.crowd.analyzer import CrowdSnapshot, DensityLevel, SurgeEvent, SurgeSeverity
+from src.events.event import Event, EventBuilder, EventType, Severity
+from src.crowd.analyzer import CrowdSnapshot, DensityLevel, SurgeEvent, SurgeSeverity
 
 
 class CrowdEventType:

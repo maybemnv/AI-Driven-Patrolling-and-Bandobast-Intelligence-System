@@ -1,0 +1,55 @@
+# Anomaly Detection Rules Configuration
+
+rules:
+  static_object:
+    enabled: true
+    priority: 80
+    time_threshold_seconds: 300
+    suspicious_classes:
+      - backpack
+      - suitcase
+      - handbag
+      - bag
+    exclusion_zones: []
+    severity_map:
+      bag: high
+      vehicle: low
+      other: medium
+
+  crowd_surge:
+    enabled: true
+    priority: 90
+    rate_threshold_percent: 50.0
+    min_initial_crowd: 20
+    critical_density: 3.0
+    window_seconds: 120
+    severity_thresholds:
+      low: 30
+      medium: 50
+      high: 100
+
+  route_blockage:
+    enabled: true
+    priority: 85
+    blockage_threshold: 0.5
+    blocking_classes:
+      - car
+      - truck
+      - bus
+      - motorcycle
+      - barrier
+    route_zones: []
+
+  after_hours:
+    enabled: true
+    priority: 60
+    normal_hours:
+      start: "06:00"
+      end: "22:00"
+    min_activity_threshold: 2
+    location_schedules: {}
+
+global:
+  min_confidence: 0.6
+  cooldown_seconds: 300
+  max_alerts_per_minute: 10

@@ -7,7 +7,7 @@ from enum import Enum
 from typing import Dict, List, Optional, Tuple
 import numpy as np
 
-from model.detector.object_detector import Detection
+from src.detector.object_detector import Detection
 
 
 class DensityLevel(Enum):

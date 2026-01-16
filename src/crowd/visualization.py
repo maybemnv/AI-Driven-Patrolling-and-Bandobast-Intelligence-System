@@ -5,7 +5,7 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 import cv2
 
-from model.crowd.analyzer import CrowdSnapshot, DensityLevel
+from src.crowd.analyzer import CrowdSnapshot, DensityLevel
 
 
 def create_density_heatmap(

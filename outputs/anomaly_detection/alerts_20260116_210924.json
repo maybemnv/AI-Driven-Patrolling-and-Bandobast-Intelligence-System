@@ -1,0 +1,76 @@
+[
+  {
+    "alert_id": "7509e641-f8f6-4690-ac70-ce706f9d0b50",
+    "rule_name": "static_object",
+    "severity": "high",
+    "message": "Static backpack detected for 10+ minutes",
+    "confidence": 0.96,
+    "timestamp": "2026-01-16T15:39:24.136125+00:00",
+    "camera_id": "cam_gate1",
+    "location": {
+      "x": 320,
+      "y": 240
+    },
+    "metadata": {
+      "object_id": "obj_123",
+      "class_name": "backpack",
+      "dwell_time_seconds": 600,
+      "first_seen": null,
+      "bbox": {
+        "x": 300,
+        "y": 220,
+        "w": 40,
+        "h": 50
+      }
+    }
+  },
+  {
+    "alert_id": "f2b34c7f-f1bb-4a29-8c02-7a8b469b2ce6",
+    "rule_name": "crowd_surge",
+    "severity": "critical",
+    "message": "Crowd surge: 60\u2192150 people (+150%), density 3.5/sqm",
+    "confidence": 0.9666666666666667,
+    "timestamp": "2026-01-16T15:39:24.136333+00:00",
+    "camera_id": "cam_market",
+    "location": null,
+    "metadata": {
+      "current_count": 150,
+      "previous_count": 60,
+      "rate_of_change": 150.0,
+      "density": 3.5,
+      "trend": "increasing"
+    }
+  },
+  {
+    "alert_id": "5b31b03e-6a90-4293-8665-fb97da5a798a",
+    "rule_name": "route_blockage",
+    "severity": "high",
+    "message": "Main Gate blocked: 100% coverage",
+    "confidence": 0.9475,
+    "timestamp": "2026-01-16T15:39:24.136537+00:00",
+    "camera_id": "cam_vip_route",
+    "location": null,
+    "metadata": {
+      "zone_id": "z1",
+      "zone_name": "Main Gate",
+      "coverage_percent": 100.0,
+      "blocking_objects": 2
+    }
+  },
+  {
+    "alert_id": "4acccc00-43fb-406f-891c-c08b08989db3",
+    "rule_name": "route_blockage",
+    "severity": "high",
+    "message": "Main Gate blocked: 100% coverage",
+    "confidence": 0.96,
+    "timestamp": "2026-01-16T15:39:24.136736+00:00",
+    "camera_id": "cam_warehouse",
+    "location": null,
+    "metadata": {
+      "zone_id": "z1",
+      "zone_name": "Main Gate",
+      "coverage_percent": 100.0,
+      "blocking_objects": 1
+    }
+  }
+]

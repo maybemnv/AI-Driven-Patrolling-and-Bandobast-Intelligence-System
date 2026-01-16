@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Set, Tuple
 import uuid
 
-from model.detector.object_detector import Detection
+from src.detector.object_detector import Detection
 
 
 @dataclass
