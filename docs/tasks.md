@@ -81,48 +81,48 @@
 #### Understanding Bandobast Operations
 
 - [x] Research definition and scope of bandobast (special security arrangements)
-- [ ] Identify typical bandobast scenarios:
+- [x] Identify typical bandobast scenarios:
   - VIP movements and protocols
   - Public events (rallies, festivals, sports)
   - Religious gatherings
   - Political meetings
   - Emergency situations
-- [ ] Document key security concerns during bandobast:
+- [x] Document key security concerns during bandobast:
   - Crowd management challenges
   - Route security requirements
   - Communication coordination needs
   - Resource allocation issues
-- [ ] Note personnel roles: field officers, control room, supervisors
-- [ ] Understand timing: pre-event planning, live monitoring, post-event review
+- [x] Note personnel roles: field officers, control room, supervisors
+- [x] Understand timing: pre-event planning, live monitoring, post-event review
 
 #### Understanding Routine Patrolling
 
-- [ ] Research different types of patrol:
+- [x] Research different types of patrol:
   - Beat patrol (fixed area)
   - Mobile patrol (vehicle-based)
   - Foot patrol
   - Nakabandi (checkpoints)
-- [ ] Identify patrol objectives:
+- [x] Identify patrol objectives:
   - Crime prevention through visibility
   - Community engagement
   - Suspicious activity detection
   - Emergency response readiness
-- [ ] Document current pain points:
+- [x] Document current pain points:
   - Manual log entries
   - Delayed incident reporting
   - Limited situational awareness
   - Post-shift report burden
-- [ ] Understand patrol data: routes, timings, incidents, observations
+- [x] Understand patrol data: routes, timings, incidents, observations
 
 #### Identifying Realistic AI Use Cases
 
-- [ ] List where AI can genuinely help:
+- [x] List where AI can genuinely help:
   - Automated crowd density monitoring
   - Unusual activity flagging
   - Pattern recognition in incidents
   - Intelligent report summarization
   - Historical data insights
-- [ ] List what AI should NOT do (avoid over-promising):
+- [x] List what AI should NOT do (avoid over-promising):
   - Replace human judgment
   - Predict specific crimes
   - Make enforcement decisions
@@ -148,9 +148,9 @@
 
 #### Research Documentation
 
-- [ ] Create RESEARCH.md file in /docs/ folder
+- [x] Create RESEARCH.md file in /docs/ folder
 - [ ] Write 2-3 paragraph summary of bandobast operations
-- [ ] Write 2-3 paragraph summary of patrolling needs
+- [ ] Write 2-3 paragraph summary of patrollin g needs
 - [ ] Document 5-7 realistic AI use cases with justification
 - [ ] List 3-5 "anti-patterns" (what NOT to build)
 - [ ] Include references to any sources consulted
