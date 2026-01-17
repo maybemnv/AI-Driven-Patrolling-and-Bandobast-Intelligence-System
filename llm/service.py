@@ -1,13 +1,15 @@
-"""LLM service for generating summaries and analysis."""
+"""LangChain-based LLM service for generating summaries and analysis."""
 
 import logging
 from datetime import datetime
 from typing import Optional
 from dataclasses import dataclass
 
-from llm.client import OllamaClient, LLMResponse, get_llm_client
-from llm.prompts import PATROL_SUMMARY, BANDOBAST_RISK, PATTERN_ANALYSIS, DAILY_BRIEFING
-from llm.parser import parse_summary, parse_risk_assessment, ParsedSummary, ParsedRiskAssessment
+from langchain_core.output_parsers import StrOutputParser
+
+from llm.client import get_llm_client, LLMResponse
+from llm.prompts import PATROL_SUMMARY, BANDOBAST_RISK, DAILY_BRIEFING, format_messages
+from llm.parser import parse_summary, parse_risk_assessment
 from rag import get_retriever
 
 
@@ -18,7 +20,7 @@ logger = logging.getLogger(__name__)
 class SummaryResult:
     """Result from summary generation."""
     content: str
-    parsed: Optional[ParsedSummary] = None
+    parsed: Optional[object] = None
     tokens_used: int = 0
     duration_ms: float = 0
     success: bool = True
@@ -29,7 +31,7 @@ class SummaryResult:
 class RiskResult:
     """Result from risk assessment."""
     content: str
-    parsed: Optional[ParsedRiskAssessment] = None
+    parsed: Optional[object] = None
     tokens_used: int = 0
     duration_ms: float = 0
     success: bool = True
@@ -37,11 +39,12 @@ class RiskResult:
 
 
 class LLMService:
-    """High-level LLM service for intelligence generation."""
+    """LangChain-based LLM service for intelligence generation."""
     
-    def __init__(self, model: str = "llama3.2"):
-        self.client = get_llm_client(model)
+    def __init__(self):
+        self.client = get_llm_client()
         self.retriever = get_retriever()
+        self.output_parser = StrOutputParser()
     
     def generate_patrol_summary(
         self,
@@ -52,15 +55,15 @@ class LLMService:
         incidents_count: int,
         patrol_id: Optional[int] = None,
     ) -> SummaryResult:
-        """Generate patrol session summary."""
+        """Generate patrol session summary using LangChain."""
         try:
-            # Get relevant context from RAG
             context = self.retriever.get_context(
                 f"patrol events officer {officer_id}",
                 max_tokens=1500,
             )
             
-            messages = PATROL_SUMMARY.to_messages(
+            messages = format_messages(
+                PATROL_SUMMARY,
                 officer_name=officer_name,
                 officer_id=officer_id,
                 duration=duration,
@@ -88,7 +91,7 @@ class LLMService:
         location: str,
         expected_crowd: int,
     ) -> RiskResult:
-        """Generate bandobast risk assessment."""
+        """Generate bandobast risk assessment using LangChain."""
         try:
             alerts_context = self.retriever.get_context(
                 f"alerts {location}",
@@ -100,7 +103,8 @@ class LLMService:
                 max_tokens=700,
             )
             
-            messages = BANDOBAST_RISK.to_messages(
+            messages = format_messages(
+                BANDOBAST_RISK,
                 event_name=event_name,
                 location=location,
                 expected_crowd=expected_crowd,
@@ -122,7 +126,7 @@ class LLMService:
             return RiskResult(content="", success=False, error=str(e))
     
     def generate_daily_briefing(self, date: str) -> SummaryResult:
-        """Generate daily shift briefing."""
+        """Generate daily shift briefing using LangChain."""
         try:
             summary_context = self.retriever.get_context(
                 f"patrol summary {date}",
@@ -134,7 +138,8 @@ class LLMService:
                 max_tokens=600,
             )
             
-            messages = DAILY_BRIEFING.to_messages(
+            messages = format_messages(
+                DAILY_BRIEFING,
                 date=date,
                 total_patrols="-",
                 total_alerts="-",
@@ -160,6 +165,6 @@ class LLMService:
         return self.client.is_available()
 
 
-def get_llm_service(model: str = "llama3.1:8b") -> LLMService:
+def get_llm_service() -> LLMService:
     """Get LLM service instance."""
-    return LLMService(model)
+    return LLMService()

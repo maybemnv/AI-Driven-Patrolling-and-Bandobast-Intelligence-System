@@ -1,42 +1,17 @@
-"""Prompt templates for LLM summaries and analysis."""
 
-from dataclasses import dataclass
-from typing import Optional
+from langchain_core.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 
-
-@dataclass
-class PromptTemplate:
-    """Template for LLM prompts."""
-    system: str
-    user: str
-    
-    def format(self, **kwargs) -> dict:
-        """Format template with variables."""
-        return {
-            "system": self.system.format(**kwargs) if kwargs else self.system,
-            "user": self.user.format(**kwargs) if kwargs else self.user,
-        }
-    
-    def to_messages(self, **kwargs) -> list[dict]:
-        """Convert to chat messages format."""
-        formatted = self.format(**kwargs)
-        return [
-            {"role": "system", "content": formatted["system"]},
-            {"role": "user", "content": formatted["user"]},
-        ]
-
-
-PATROL_SUMMARY = PromptTemplate(
-    system="""You are a police intelligence analyst. Your task is to summarize patrol sessions in a concise, actionable format.
+PATROL_SUMMARY_SYSTEM = """You are a police intelligence analyst. Your task is to summarize patrol sessions in a concise, actionable format.
 
 Guidelines:
 - Be factual and objective
 - Highlight key events and incidents
 - Note any security concerns
 - Provide actionable recommendations
-- Use professional police terminology""",
-    
-    user="""Summarize this patrol session:
+- Use professional police terminology"""
+
+
+PATROL_SUMMARY_HUMAN = """Summarize this patrol session:
 
 **Officer**: {officer_name} ({officer_id})
 **Duration**: {duration}
@@ -51,20 +26,19 @@ Provide:
 2. **Key Events** (bullet list)
 3. **Observations** (patterns or concerns)
 4. **Recommendations** (actionable items)"""
-)
 
 
-BANDOBAST_RISK = PromptTemplate(
-    system="""You are a security operations analyst. Analyze bandobast (security arrangement) data to assess risk levels and provide recommendations.
+BANDOBAST_RISK_SYSTEM = """You are a security operations analyst. Analyze bandobast (security arrangement) data to assess risk levels and provide recommendations.
 
 Guidelines:
 - Assess crowd density and movement patterns
 - Identify potential security concerns
 - Consider historical incident data
 - Provide clear risk ratings (LOW/MEDIUM/HIGH/CRITICAL)
-- Recommend specific mitigation measures""",
-    
-    user="""Analyze this bandobast security arrangement:
+- Recommend specific mitigation measures"""
+
+
+BANDOBAST_RISK_HUMAN = """Analyze this bandobast security arrangement:
 
 **Event**: {event_name}
 **Location**: {location}
@@ -81,20 +55,19 @@ Provide:
 2. **Key Concerns** (bullet list)
 3. **Resource Assessment** (adequacy of security coverage)
 4. **Recommendations** (specific actions)"""
-)
 
 
-PATTERN_ANALYSIS = PromptTemplate(
-    system="""You are a crime pattern analyst. Identify trends and patterns in security incident data to support predictive policing.
+PATTERN_ANALYSIS_SYSTEM = """You are a crime pattern analyst. Identify trends and patterns in security incident data to support predictive policing.
 
 Guidelines:
 - Look for temporal patterns (time of day, day of week)
 - Identify location hotspots
 - Note recurring incident types
 - Assess severity trends
-- Provide confidence levels for insights""",
-    
-    user="""Analyze patterns in this security data:
+- Provide confidence levels for insights"""
+
+
+PATTERN_ANALYSIS_HUMAN = """Analyze patterns in this security data:
 
 **Time Period**: {time_period}
 **Total Incidents**: {total_incidents}
@@ -111,20 +84,19 @@ Provide:
 3. **Location Hotspots** (areas of concern)
 4. **Predictive Insights** (what to expect)
 5. **Resource Recommendations** (deployment suggestions)"""
-)
 
 
-DAILY_BRIEFING = PromptTemplate(
-    system="""You are a police shift supervisor preparing a daily briefing. Summarize the day's operations for the incoming shift.
+DAILY_BRIEFING_SYSTEM = """You are a police shift supervisor preparing a daily briefing. Summarize the day's operations for the incoming shift.
 
 Guidelines:
 - Highlight critical incidents
 - Note ongoing situations
 - Summarize patrol coverage
 - Identify areas needing attention
-- Keep it concise and actionable""",
-    
-    user="""Prepare a daily briefing summary:
+- Keep it concise and actionable"""
+
+
+DAILY_BRIEFING_HUMAN = """Prepare a daily briefing summary:
 
 **Date**: {date}
 **Total Patrols**: {total_patrols}
@@ -142,10 +114,30 @@ Provide:
 3. **Ongoing Situations** (monitoring required)
 4. **Areas of Concern** (increased patrol needed)
 5. **Handover Notes** (for incoming shift)"""
-)
 
 
-def get_template(name: str) -> Optional[PromptTemplate]:
+PATROL_SUMMARY = ChatPromptTemplate.from_messages([
+    SystemMessagePromptTemplate.from_template(PATROL_SUMMARY_SYSTEM),
+    HumanMessagePromptTemplate.from_template(PATROL_SUMMARY_HUMAN),
+])
+
+BANDOBAST_RISK = ChatPromptTemplate.from_messages([
+    SystemMessagePromptTemplate.from_template(BANDOBAST_RISK_SYSTEM),
+    HumanMessagePromptTemplate.from_template(BANDOBAST_RISK_HUMAN),
+])
+
+PATTERN_ANALYSIS = ChatPromptTemplate.from_messages([
+    SystemMessagePromptTemplate.from_template(PATTERN_ANALYSIS_SYSTEM),
+    HumanMessagePromptTemplate.from_template(PATTERN_ANALYSIS_HUMAN),
+])
+
+DAILY_BRIEFING = ChatPromptTemplate.from_messages([
+    SystemMessagePromptTemplate.from_template(DAILY_BRIEFING_SYSTEM),
+    HumanMessagePromptTemplate.from_template(DAILY_BRIEFING_HUMAN),
+])
+
+
+def get_template(name: str) -> ChatPromptTemplate:
     """Get prompt template by name."""
     templates = {
         "patrol_summary": PATROL_SUMMARY,
@@ -154,3 +146,23 @@ def get_template(name: str) -> Optional[PromptTemplate]:
         "daily_briefing": DAILY_BRIEFING,
     }
     return templates.get(name)
+
+
+def format_messages(template: ChatPromptTemplate, **kwargs) -> list[dict]:
+    """Format template to list of message dicts for API call."""
+    messages = template.format_messages(**kwargs)
+    
+    role_map = {
+        "human": "user",
+        "ai": "assistant",
+        "system": "system",
+        "chat": "user"  # Fallback
+    }
+    
+    return [
+        {
+            "role": role_map.get(m.type, "user"),
+            "content": m.content
+        } 
+        for m in messages
+    ]

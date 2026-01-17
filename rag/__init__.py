@@ -10,7 +10,7 @@ from rag.preprocessor import (
 )
 from rag.chunker import chunk_text, estimate_tokens
 from rag.ingestion import IngestionPipeline, get_pipeline
-from rag.retriever import Retriever, get_retriever
+from rag.retriever import LangChainRetriever, get_retriever
 
 __all__ = [
     "Embedder", "get_embedder",
@@ -18,5 +18,6 @@ __all__ = [
     "events_to_narrative", "location_context_to_text",
     "chunk_text", "estimate_tokens",
     "IngestionPipeline", "get_pipeline",
-    "Retriever", "get_retriever"
+    "LangChainRetriever", "get_retriever"
 ]
+

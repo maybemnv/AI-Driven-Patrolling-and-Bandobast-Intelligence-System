@@ -43,7 +43,12 @@ class Settings(BaseSettings):
     copmap_webhook_url: Optional[str] = None
     copmap_api_key: Optional[str] = None
     
-    # Ollama LLM
+    # LLM Settings
+    llm_provider: str = "groq"  # groq or ollama
+    groq_api_key: Optional[str] = None
+    groq_model: str = "llama-3.1-8b-instant"
+    
+    # Ollama (fallback)
     ollama_url: str = "http://localhost:11434"
     ollama_model: str = "llama3.1:8b"
     

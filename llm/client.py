@@ -1,11 +1,12 @@
-"""LLM client wrapper for Ollama with retry logic."""
+"""LangChain-based LLM client with Groq support."""
 
-import json
-import time
-from typing import Optional, Generator
+from typing import Optional
 from dataclasses import dataclass
 
-import requests
+from langchain_core.language_models.base import BaseLanguageModel
+from langchain_core.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.messages import HumanMessage, SystemMessage
 
 from config import get_settings
 
@@ -18,50 +19,39 @@ class LLMResponse:
     tokens_prompt: int
     tokens_completion: int
     duration_ms: float
-    
 
-class OllamaClient:
-    """Ollama API client with retry and timeout handling."""
+
+class GroqLangChainClient:
+    """LangChain wrapper for Groq API."""
     
     def __init__(
         self,
-        base_url: str = "http://localhost:11434",
-        model: str = "llama3.2",
-        timeout: int = 120,
-        max_retries: int = 3,
+        api_key: str,
+        model: str = "llama-3.1-8b-instant",
+        temperature: float = 0.3,
     ):
-        self.base_url = base_url.rstrip("/")
+        from groq import Groq
+        self.groq_client = Groq(api_key=api_key)
         self.model = model
-        self.timeout = timeout
-        self.max_retries = max_retries
-        
-        self.default_options = {
-            "temperature": 0.3,
-            "top_p": 0.9,
-            "num_predict": 1000,
-        }
+        self.temperature = temperature
+        self.api_key = api_key
     
-    def _request(self, endpoint: str, payload: dict) -> dict:
-        """Make request with retry logic."""
-        url = f"{self.base_url}{endpoint}"
+    def invoke(self, messages: list[dict], **kwargs) -> str:
+        """Invoke the model with messages."""
+        import time
+        start = time.perf_counter()
         
-        for attempt in range(self.max_retries):
-            try:
-                resp = requests.post(url, json=payload, timeout=self.timeout)
-                resp.raise_for_status()
-                return resp.json()
-            except requests.exceptions.Timeout:
-                if attempt == self.max_retries - 1:
-                    raise TimeoutError(f"Ollama request timed out after {self.timeout}s")
-                time.sleep(2 ** attempt)
-            except requests.exceptions.ConnectionError:
-                if attempt == self.max_retries - 1:
-                    raise ConnectionError("Cannot connect to Ollama. Is it running?")
-                time.sleep(2 ** attempt)
-            except requests.exceptions.HTTPError as e:
-                raise RuntimeError(f"Ollama API error: {e}")
+        response = self.groq_client.chat.completions.create(
+            model=self.model,
+            messages=messages,
+            temperature=kwargs.get("temperature", self.temperature),
+            max_tokens=kwargs.get("max_tokens", 1000),
+        )
         
-        raise RuntimeError("Max retries exceeded")
+        self._last_duration = (time.perf_counter() - start) * 1000
+        self._last_usage = response.usage
+        
+        return response.choices[0].message.content or ""
     
     def generate(
         self,
@@ -70,30 +60,25 @@ class OllamaClient:
         temperature: float = 0.3,
         max_tokens: int = 1000,
     ) -> LLMResponse:
-        """Generate completion."""
-        payload = {
-            "model": self.model,
-            "prompt": prompt,
-            "stream": False,
-            "options": {
-                "temperature": temperature,
-                "num_predict": max_tokens,
-                "top_p": 0.9,
-            },
-        }
+        """Generate completion using LangChain pattern."""
+        import time
         
+        messages = []
         if system:
-            payload["system"] = system
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
         
         start = time.perf_counter()
-        result = self._request("/api/generate", payload)
+        content = self.invoke(messages, temperature=temperature, max_tokens=max_tokens)
         duration = (time.perf_counter() - start) * 1000
         
+        usage = getattr(self, "_last_usage", None)
+        
         return LLMResponse(
-            content=result.get("response", ""),
-            model=result.get("model", self.model),
-            tokens_prompt=result.get("prompt_eval_count", 0),
-            tokens_completion=result.get("eval_count", 0),
+            content=content,
+            model=self.model,
+            tokens_prompt=usage.prompt_tokens if usage else 0,
+            tokens_completion=usage.completion_tokens if usage else 0,
             duration_ms=duration,
         )
     
@@ -104,50 +89,60 @@ class OllamaClient:
         max_tokens: int = 1000,
     ) -> LLMResponse:
         """Chat completion with messages."""
-        payload = {
-            "model": self.model,
-            "messages": messages,
-            "stream": False,
-            "options": {
-                "temperature": temperature,
-                "num_predict": max_tokens,
-            },
-        }
-        
+        import time
         start = time.perf_counter()
-        result = self._request("/api/chat", payload)
+        
+        content = self.invoke(messages, temperature=temperature, max_tokens=max_tokens)
         duration = (time.perf_counter() - start) * 1000
         
+        usage = getattr(self, "_last_usage", None)
+        
         return LLMResponse(
-            content=result.get("message", {}).get("content", ""),
-            model=result.get("model", self.model),
-            tokens_prompt=result.get("prompt_eval_count", 0),
-            tokens_completion=result.get("eval_count", 0),
+            content=content,
+            model=self.model,
+            tokens_prompt=usage.prompt_tokens if usage else 0,
+            tokens_completion=usage.completion_tokens if usage else 0,
             duration_ms=duration,
         )
     
     def is_available(self) -> bool:
-        """Check if Ollama is running."""
+        """Check if API is accessible."""
         try:
-            resp = requests.get(f"{self.base_url}/api/tags", timeout=5)
-            return resp.status_code == 200
+            self.groq_client.models.list()
+            return True
         except Exception:
             return False
     
     def list_models(self) -> list[str]:
         """List available models."""
         try:
-            resp = requests.get(f"{self.base_url}/api/tags", timeout=5)
-            data = resp.json()
-            return [m["name"] for m in data.get("models", [])]
+            response = self.groq_client.models.list()
+            return [m.id for m in response.data]
         except Exception:
             return []
 
 
-def get_llm_client(model: str = "llama3.1:8b") -> OllamaClient:
-    """Get configured LLM client."""
+def create_chain(system_prompt: str, llm_client: GroqLangChainClient):
+    """Create a LangChain-style chain with prompt template."""
+    
+    def chain_invoke(user_input: str, **kwargs) -> str:
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_input},
+        ]
+        return llm_client.invoke(messages, **kwargs)
+    
+    return chain_invoke
+
+
+def get_llm_client(model: Optional[str] = None):
+    """Get LangChain-compatible LLM client."""
     settings = get_settings()
-    return OllamaClient(
-        base_url=getattr(settings, "ollama_url", "http://localhost:11434"),
-        model=model,
-    )
+    
+    api_key = getattr(settings, "groq_api_key", None)
+    if not api_key:
+        raise ValueError("GROQ_API_KEY not set in environment")
+    
+    model = model or getattr(settings, "groq_model", "llama-3.1-8b-instant")
+    
+    return GroqLangChainClient(api_key=api_key, model=model)
