@@ -9,7 +9,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from backend.routers import events, alerts, patrols, summaries, cameras, copmap, rag
+from backend.routers import events, alerts, patrols, summaries, cameras, copmap, rag, llm
 from backend.security import rate_limiter
 from backend.exceptions import AppError, RateLimitError
 from config.settings import get_settings
@@ -119,6 +119,7 @@ app.include_router(summaries.router, prefix="/api/v1/summaries", tags=["Summarie
 app.include_router(cameras.router, prefix="/api/v1/cameras", tags=["Cameras"])
 app.include_router(copmap.router, prefix="/api/v1/copmap", tags=["CopMap"])
 app.include_router(rag.router, prefix="/api/v1", tags=["RAG"])
+app.include_router(llm.router, prefix="/api/v1", tags=["LLM"])
 
 
 @app.get("/health", tags=["System"])

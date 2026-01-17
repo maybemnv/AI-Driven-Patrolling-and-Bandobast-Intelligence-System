@@ -43,6 +43,10 @@ class Settings(BaseSettings):
     copmap_webhook_url: Optional[str] = None
     copmap_api_key: Optional[str] = None
     
+    # Ollama LLM
+    ollama_url: str = "http://localhost:11434"
+    ollama_model: str = "llama3.2"
+    
     @property
     def cors_origins_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",")]

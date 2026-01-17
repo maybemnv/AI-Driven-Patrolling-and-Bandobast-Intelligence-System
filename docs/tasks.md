@@ -1294,7 +1294,6 @@ Add these tasks under CV Implementation:
 #### Vector DB Selection and Installation
 
 - [ ] Choose vector database:
-
   - FAISS (alternative: faster, more complex)
 
 - [ ] Install chosen vector database package
@@ -1427,8 +1426,7 @@ Add these tasks under CV Implementation:
 
 - [ ] Choose LLM approach:
   - **Ollama** with Llama 3.2 or Mistral (recommended: local, free, private)
-  - **OpenAI API** (alternative: better quality, costs money)
-  - **Groq API** (alternative: free tier, fast)
+
 - [ ] Install chosen LLM solution:
   - Ollama: Download and install, pull model
   - API: Set up API keys and environment variables
