@@ -1,0 +1,266 @@
+{
+  "timestamp": "2026-01-17T17:25:41.905750",
+  "collection_stats": {
+    "patrol_logs": 3,
+    "alert_history": 3,
+    "location_context": 2,
+    "incident_reports": 2
+  },
+  "query_results": {
+    "patrol incidents in south zone": {
+      "patrol_logs": [
+        {
+          "document": "Patrol session #101 by Officer Sharma in South Zone. Started 2024-01-15 08:00. Completed 4 hour shif...",
+          "similarity": 0.6152,
+          "relevance_score": 0.6652
+        },
+        {
+          "document": "Patrol session #103 by Officer Singh in Central Zone near railway station. Started 2024-01-16 10:00....",
+          "similarity": 0.5306,
+          "relevance_score": 0.5806
+        }
+      ],
+      "alert_history": [
+        {
+          "document": "Alert #201: crowd_surge (high severity). Large crowd detected at festival ground exceeding 500 peopl...",
+          "similarity": 0.4114,
+          "relevance_score": 0.5114
+        },
+        {
+          "document": "Alert #202: static_object (medium severity). Unattended bag detected near bus station platform 3. Oc...",
+          "similarity": 0.3873,
+          "relevance_score": 0.4373
+        }
+      ],
+      "location_context": [
+        {
+          "document": "Location: South Zone Market Area. Commercial district with shops and vendors. Characteristics: moder...",
+          "similarity": 0.4875,
+          "relevance_score": 0.5375
+        },
+        {
+          "document": "Location: Railway Station. Major transit hub with 50,000+ daily footfall. Characteristics: high crow...",
+          "similarity": 0.4005,
+          "relevance_score": 0.5005
+        }
+      ],
+      "incident_reports": [
+        {
+          "document": "Event #302: object_detected from camera 'Market Entry' at Main Bazaar. 2024-01-15 12:00. Detected ve...",
+          "similarity": 0.4037,
+          "relevance_score": 0.4537
+        },
+        {
+          "document": "Event #301: crowd_detected from camera 'Station Plaza Cam' at Railway Station. 2024-01-15 17:30. Cro...",
+          "similarity": 0.3982,
+          "relevance_score": 0.4482
+        }
+      ]
+    },
+    "crowd management challenges": {
+      "patrol_logs": [
+        {
+          "document": "Patrol session #103 by Officer Singh in Central Zone near railway station. Started 2024-01-16 10:00....",
+          "similarity": 0.4143,
+          "relevance_score": 0.4643
+        },
+        {
+          "document": "Patrol session #101 by Officer Sharma in South Zone. Started 2024-01-15 08:00. Completed 4 hour shif...",
+          "similarity": 0.3977,
+          "relevance_score": 0.4477
+        }
+      ],
+      "alert_history": [
+        {
+          "document": "Alert #201: crowd_surge (high severity). Large crowd detected at festival ground exceeding 500 peopl...",
+          "similarity": 0.4579,
+          "relevance_score": 0.5579
+        },
+        {
+          "document": "Alert #202: static_object (medium severity). Unattended bag detected near bus station platform 3. Oc...",
+          "similarity": 0.3657,
+          "relevance_score": 0.4157
+        }
+      ],
+      "location_context": [
+        {
+          "document": "Location: Railway Station. Major transit hub with 50,000+ daily footfall. Characteristics: high crow...",
+          "similarity": 0.3969,
+          "relevance_score": 0.4969
+        },
+        {
+          "document": "Location: South Zone Market Area. Commercial district with shops and vendors. Characteristics: moder...",
+          "similarity": 0.3931,
+          "relevance_score": 0.4431
+        }
+      ],
+      "incident_reports": [
+        {
+          "document": "Event #301: crowd_detected from camera 'Station Plaza Cam' at Railway Station. 2024-01-15 17:30. Cro...",
+          "similarity": 0.4644,
+          "relevance_score": 0.5144
+        },
+        {
+          "document": "Event #302: object_detected from camera 'Market Entry' at Main Bazaar. 2024-01-15 12:00. Detected ve...",
+          "similarity": 0.3826,
+          "relevance_score": 0.4326
+        }
+      ]
+    },
+    "static object alerts near station": {
+      "patrol_logs": [
+        {
+          "document": "Patrol session #103 by Officer Singh in Central Zone near railway station. Started 2024-01-16 10:00....",
+          "similarity": 0.4228,
+          "relevance_score": 0.4728
+        },
+        {
+          "document": "Patrol session #101 by Officer Sharma in South Zone. Started 2024-01-15 08:00. Completed 4 hour shif...",
+          "similarity": 0.3846,
+          "relevance_score": 0.4346
+        }
+      ],
+      "alert_history": [
+        {
+          "document": "Alert #202: static_object (medium severity). Unattended bag detected near bus station platform 3. Oc...",
+          "similarity": 0.4991,
+          "relevance_score": 0.5491
+        },
+        {
+          "document": "Alert #201: crowd_surge (high severity). Large crowd detected at festival ground exceeding 500 peopl...",
+          "similarity": 0.4406,
+          "relevance_score": 0.5406
+        }
+      ],
+      "location_context": [
+        {
+          "document": "Location: Railway Station. Major transit hub with 50,000+ daily footfall. Characteristics: high crow...",
+          "similarity": 0.4347,
+          "relevance_score": 0.5347
+        },
+        {
+          "document": "Location: South Zone Market Area. Commercial district with shops and vendors. Characteristics: moder...",
+          "similarity": 0.3653,
+          "relevance_score": 0.4153
+        }
+      ],
+      "incident_reports": [
+        {
+          "document": "Event #301: crowd_detected from camera 'Station Plaza Cam' at Railway Station. 2024-01-15 17:30. Cro...",
+          "similarity": 0.4375,
+          "relevance_score": 0.4875
+        },
+        {
+          "document": "Event #302: object_detected from camera 'Market Entry' at Main Bazaar. 2024-01-15 12:00. Detected ve...",
+          "similarity": 0.4115,
+          "relevance_score": 0.4615
+        }
+      ]
+    },
+    "high risk locations": {
+      "patrol_logs": [
+        {
+          "document": "Patrol session #101 by Officer Sharma in South Zone. Started 2024-01-15 08:00. Completed 4 hour shif...",
+          "similarity": 0.3662,
+          "relevance_score": 0.4162
+        },
+        {
+          "document": "Patrol session #103 by Officer Singh in Central Zone near railway station. Started 2024-01-16 10:00....",
+          "similarity": 0.35,
+          "relevance_score": 0.4
+        }
+      ],
+      "alert_history": [
+        {
+          "document": "Alert #201: crowd_surge (high severity). Large crowd detected at festival ground exceeding 500 peopl...",
+          "similarity": 0.3865,
+          "relevance_score": 0.4865
+        },
+        {
+          "document": "Alert #202: static_object (medium severity). Unattended bag detected near bus station platform 3. Oc...",
+          "similarity": 0.3568,
+          "relevance_score": 0.4068
+        }
+      ],
+      "location_context": [
+        {
+          "document": "Location: Railway Station. Major transit hub with 50,000+ daily footfall. Characteristics: high crow...",
+          "similarity": 0.4527,
+          "relevance_score": 0.5527
+        },
+        {
+          "document": "Location: South Zone Market Area. Commercial district with shops and vendors. Characteristics: moder...",
+          "similarity": 0.4962,
+          "relevance_score": 0.5462
+        }
+      ],
+      "incident_reports": [
+        {
+          "document": "Event #302: object_detected from camera 'Market Entry' at Main Bazaar. 2024-01-15 12:00. Detected ve...",
+          "similarity": 0.3765,
+          "relevance_score": 0.4265
+        },
+        {
+          "document": "Event #301: crowd_detected from camera 'Station Plaza Cam' at Railway Station. 2024-01-15 17:30. Cro...",
+          "similarity": 0.356,
+          "relevance_score": 0.406
+        }
+      ]
+    },
+    "evening patrol reports": {
+      "patrol_logs": [
+        {
+          "document": "Patrol session #101 by Officer Sharma in South Zone. Started 2024-01-15 08:00. Completed 4 hour shif...",
+          "similarity": 0.5356,
+          "relevance_score": 0.5856
+        },
+        {
+          "document": "Patrol session #103 by Officer Singh in Central Zone near railway station. Started 2024-01-16 10:00....",
+          "similarity": 0.5018,
+          "relevance_score": 0.5518
+        }
+      ],
+      "alert_history": [
+        {
+          "document": "Alert #201: crowd_surge (high severity). Large crowd detected at festival ground exceeding 500 peopl...",
+          "similarity": 0.3902,
+          "relevance_score": 0.4902
+        },
+        {
+          "document": "Alert #203: crowd_density (low severity). Morning crowd at market area within normal limits. Occurre...",
+          "similarity": 0.4436,
+          "relevance_score": 0.4436
+        }
+      ],
+      "location_context": [
+        {
+          "document": "Location: Railway Station. Major transit hub with 50,000+ daily footfall. Characteristics: high crow...",
+          "similarity": 0.3747,
+          "relevance_score": 0.4747
+        },
+        {
+          "document": "Location: South Zone Market Area. Commercial district with shops and vendors. Characteristics: moder...",
+          "similarity": 0.3791,
+          "relevance_score": 0.4291
+        }
+      ],
+      "incident_reports": [
+        {
+          "document": "Event #301: crowd_detected from camera 'Station Plaza Cam' at Railway Station. 2024-01-15 17:30. Cro...",
+          "similarity": 0.3947,
+          "relevance_score": 0.4447
+        },
+        {
+          "document": "Event #302: object_detected from camera 'Market Entry' at Main Bazaar. 2024-01-15 12:00. Detected ve...",
+          "similarity": 0.3915,
+          "relevance_score": 0.4415
+        }
+      ]
+    }
+  },
+  "benchmark": {
+    "avg_query_ms": 5.12,
+    "min_query_ms": 4.55,
+    "max_query_ms": 6.32
+  }
+}

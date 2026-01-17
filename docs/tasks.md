@@ -1294,9 +1294,9 @@ Add these tasks under CV Implementation:
 #### Vector DB Selection and Installation
 
 - [ ] Choose vector database:
-  - ChromaDB (recommended: easy setup, local)
+
   - FAISS (alternative: faster, more complex)
-  - Qdrant (alternative: feature-rich)
+
 - [ ] Install chosen vector database package
 - [ ] Create vector_store module
 - [ ] Set up persistent storage location
@@ -1306,9 +1306,8 @@ Add these tasks under CV Implementation:
 #### Embedding Model Setup
 
 - [ ] Select embedding model:
-  - sentence-transformers/all-MiniLM-L6-v2 (recommended: 384 dims, fast)
-  - sentence-transformers/all-mpnet-base-v2 (alternative: better quality)
-- [ ] Install sentence-transformers library
+  - all-MiniLM-L6-v2 (recommended: 384 dims, fast)
+- [ ] Install
 - [ ] Create embedder class
 - [ ] Implement model loading with caching
 - [ ] Test embedding generation
