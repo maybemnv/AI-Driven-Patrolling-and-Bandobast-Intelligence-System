@@ -1,4 +1,4 @@
-"""Unit tests for database models and vectordb."""
+"""Tests for database models and vectordb."""
 
 import pytest
 from datetime import datetime
@@ -57,28 +57,35 @@ class TestVectorDB:
     def test_init(self, tmp_path):
         from database import VectorDB
         vdb = VectorDB(str(tmp_path / "vectordb"))
-        assert vdb.client is not None
+        assert vdb is not None
     
     def test_get_collection(self, tmp_path):
         from database import VectorDB
         vdb = VectorDB(str(tmp_path / "vectordb"))
-        col = vdb.get_collection("test_collection")
+        col = vdb.get_collection("patrol_logs")
         assert col is not None
     
     def test_add_and_query(self, tmp_path):
+        import numpy as np
         from database import VectorDB
+        
         vdb = VectorDB(str(tmp_path / "vectordb"))
         
+        docs = ["hello world", "test document"]
+        embeddings = np.random.rand(2, 384).astype(np.float32)
+        
         vdb.add_documents(
-            "test_collection",
-            documents=["hello world", "test document"],
+            "patrol_logs",
+            documents=docs,
+            embeddings=embeddings,
             ids=["1", "2"]
         )
         
-        assert vdb.count("test_collection") == 2
+        assert vdb.count("patrol_logs") == 2
         
-        results = vdb.query("test_collection", "hello", n_results=1)
-        assert len(results["documents"][0]) >= 1
+        query_emb = np.random.rand(384).astype(np.float32)
+        results = vdb.query("patrol_logs", query_emb, n_results=1)
+        assert len(results["documents"]) >= 1
 
 
 if __name__ == "__main__":

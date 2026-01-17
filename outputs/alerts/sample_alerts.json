@@ -1,0 +1,93 @@
+{
+  "sample_alerts": [
+    {
+      "alert_id": "a7f3b2c1-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+      "alert_type": "static_object",
+      "severity": "critical",
+      "priority": "critical",
+      "priority_score": 0.82,
+      "message": "Unattended bag detected near VIP entrance",
+      "description": "Static backpack detected for 600 seconds",
+      "timestamp": "2026-01-17T17:15:00Z",
+      "camera_id": "CAM_VIP_01",
+      "location": {"lat": 28.6139, "lon": 77.209},
+      "recommended_action": "Dispatch patrol to investigate unattended object",
+      "occurrence_count": 1,
+      "status": "active",
+      "media_ref": null,
+      "metadata": {"class_name": "backpack", "dwell_time": 600, "confidence": 0.92}
+    },
+    {
+      "alert_id": "b8c4d3e2-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+      "alert_type": "crowd_surge",
+      "severity": "high",
+      "priority": "high",
+      "priority_score": 0.68,
+      "message": "Crowd surge detected at Gate 3",
+      "description": "Crowd increased from 50 to 120 people",
+      "timestamp": "2026-01-17T17:10:00Z",
+      "camera_id": "CAM_GATE_03",
+      "location": {"lat": 28.615, "lon": 77.211},
+      "recommended_action": "Deploy crowd control and monitor density",
+      "occurrence_count": 2,
+      "status": "acknowledged",
+      "media_ref": null,
+      "metadata": {"count": 120, "previous_count": 50, "density": 2.8}
+    },
+    {
+      "alert_id": "c9d5e4f3-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+      "alert_type": "route_blocked",
+      "severity": "medium",
+      "priority": "medium",
+      "priority_score": 0.45,
+      "message": "Patrol route partially blocked",
+      "description": "Route blockage detected: vehicle obstruction",
+      "timestamp": "2026-01-17T17:05:00Z",
+      "camera_id": "CAM_ROUTE_02",
+      "location": {"lat": 28.612, "lon": 77.208},
+      "recommended_action": "Reroute patrols and assess blockage",
+      "occurrence_count": 1,
+      "status": "resolved",
+      "media_ref": null,
+      "metadata": {"reason": "vehicle obstruction", "blockage_percent": 0.4}
+    }
+  ],
+  "copmap_webhook_payload": {
+    "alert_id": "a7f3b2c1-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+    "alert_type": "static_object",
+    "severity": "critical",
+    "priority": "critical",
+    "location": {"lat": 28.6139, "lon": 77.209},
+    "message": "Unattended bag detected near VIP entrance",
+    "description": "Static backpack detected for 600 seconds",
+    "timestamp": "2026-01-17T17:15:00Z",
+    "recommended_action": "Dispatch patrol to investigate unattended object",
+    "media_ref": null,
+    "metadata": {"class_name": "backpack", "dwell_time": 600}
+  },
+  "notification_channels": {
+    "copmap_webhook": {"enabled": true, "url": "/api/v1/copmap/alerts"},
+    "sms": {"enabled": false, "gateway": null},
+    "email": {"enabled": false, "smtp_host": null},
+    "push": {"enabled": false, "service": null}
+  },
+  "alert_lifecycle_example": {
+    "transitions": [
+      {"from": "ACTIVE", "to": "ACKNOWLEDGED", "timestamp": "2026-01-17T17:12:00Z", "by": "Officer Singh"},
+      {"from": "ACKNOWLEDGED", "to": "RESOLVED", "timestamp": "2026-01-17T17:20:00Z", "reason": "Object claimed by owner"}
+    ]
+  },
+  "cooldown_periods": {
+    "static_object": "10 minutes (600 seconds)",
+    "crowd_surge": "5 minutes (300 seconds)",
+    "route_blocked": "15 minutes (900 seconds)",
+    "after_hours": "10 minutes (600 seconds)"
+  },
+  "priority_factors": {
+    "severity_weight": 0.40,
+    "location_weight": 0.30,
+    "time_weight": 0.15,
+    "history_weight": 0.15
+  },
+  "generated_at": "2026-01-17T17:16:00Z"
+}

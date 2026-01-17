@@ -11,7 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.openapi.utils import get_openapi
 
-from backend.routers import events, alerts, patrols, summaries, cameras
+from backend.routers import events, alerts, patrols, summaries, cameras, copmap, rag
 from backend.security import rate_limiter, verify_api_key
 from database import create_db_engine, init_db
 
@@ -112,6 +112,8 @@ app.include_router(alerts.router, prefix="/api/v1/alerts", tags=["Alerts"])
 app.include_router(patrols.router, prefix="/api/v1/patrol", tags=["Patrol"])
 app.include_router(summaries.router, prefix="/api/v1/summaries", tags=["Summaries"])
 app.include_router(cameras.router, prefix="/api/v1/cameras", tags=["Cameras"])
+app.include_router(copmap.router, prefix="/api/v1/copmap", tags=["CopMap Integration"])
+app.include_router(rag.router, prefix="/api/v1", tags=["RAG"])
 
 
 @app.get("/health", tags=["System"], summary="Health check", description="Returns API health status")

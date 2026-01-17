@@ -15,7 +15,7 @@ except ImportError:
 class VectorDB:
     """FAISS-based vector store for semantic search."""
     
-    COLLECTIONS = ["patrol_logs", "alert_history", "location_context"]
+    COLLECTIONS = ["patrol_logs", "alert_history", "location_context", "incident_reports"]
     
     def __init__(self, persist_dir: str = "data/vectordb", dimension: int = 384):
         if faiss is None:

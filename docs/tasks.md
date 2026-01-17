@@ -6,17 +6,17 @@
 
 ## TIME ALLOCATION OVERVIEW
 
-| Phase                     | Duration      | Key Focus                         |
-| ------------------------- | ------------- | --------------------------------- |
-| Phase 1: Setup & Research | 1.5h          | Environment + Domain Knowledge    |
-| Phase 2: System Design    | 2h            | Architecture + Planning           |
-| Phase 3: CV/ML Core       | 4h            | Object Detection + Crowd Analysis |
-| Phase 4: Backend API      | 3h            | REST API + Database               |
-| Phase 5: LLM & RAG        | 3.5h          | Intelligence Summaries            |
-| Phase 6: Integration      | 1.5h          | Testing + CopMap Mock             |
-| Phase 7: Documentation    | 3h            | README + Diagrams                 |
-| Phase 8: Video            | 1h            | Explanation Recording             |
-| **TOTAL**                 | **20h**       | **Optimize to 15h**               |
+| Phase                     | Duration | Key Focus                         |
+| ------------------------- | -------- | --------------------------------- |
+| Phase 1: Setup & Research | 1.5h     | Environment + Domain Knowledge    |
+| Phase 2: System Design    | 2h       | Architecture + Planning           |
+| Phase 3: CV/ML Core       | 4h       | Object Detection + Crowd Analysis |
+| Phase 4: Backend API      | 3h       | REST API + Database               |
+| Phase 5: LLM & RAG        | 3.5h     | Intelligence Summaries            |
+| Phase 6: Integration      | 1.5h     | Testing + CopMap Mock             |
+| Phase 7: Documentation    | 3h       | README + Diagrams                 |
+| Phase 8: Video            | 1h       | Explanation Recording             |
+| **TOTAL**                 | **20h**  | **Optimize to 15h**               |
 
 ---
 
@@ -26,15 +26,15 @@
 
 #### Repository Initialization
 
-- [X] Create new GitHub repository with descriptive name
-- [X] Initialize with README.md template
-- [X] Add LICENSE file (MIT or Apache 2.0)
-- [X] Create .gitignore for Python projects
-- [X] Set up branch protection (if applicable)
+- [x] Create new GitHub repository with descriptive name
+- [x] Initialize with README.md template
+- [x] Add LICENSE file (MIT or Apache 2.0)
+- [x] Create .gitignore for Python projects
+- [x] Set up branch protection (if applicable)
 
 #### Project Structure Creation
 
-- [X] Create root directory structure:
+- [x] Create root directory structure:
   - `/cv_engine/` - Computer vision processing
   - `/backend/` - FastAPI application
   - `/database/` - Database models and migrations
@@ -48,31 +48,31 @@
 
 #### Python Environment Setup
 
-- [X] Create virtual environment (venv or conda)
-- [X] Create requirements.txt with core dependencies
-- [X] Install essential packages:
+- [x] Create virtual environment (venv or conda)
+- [x] Create requirements.txt with core dependencies
+- [x] Install essential packages:
   - Computer Vision: ultralytics, opencv-python, pillow
   - Backend: fastapi, uvicorn, pydantic, python-multipart
   - Database: sqlalchemy, alembic, psycopg2-binary (or sqlite3)
   - LLM/RAG: sentence-transformers, chromadb, langchain
   - Utilities: python-dotenv, pyyaml, requests, numpy, pandas
-- [X] Verify installations with version checks
-- [X] Document any installation issues encountered
+- [x] Verify installations with version checks
+- [x] Document any installation issues encountered
 
 #### Configuration Files Setup
 
-- [X] Create .env.example file with all required variables
-- [X] Create config.yaml for application settings
-- [X] Set up logging configuration
-- [X] Create docker-compose.yml (optional but recommended)
-- [X] Add Dockerfile for containerization
+- [x] Create .env.example file with all required variables
+- [x] Create config.yaml for application settings
+- [x] Set up logging configuration
+- [x] Create docker-compose.yml (optional but recommended)
+- [x] Add Dockerfile for containerization
 
 #### Development Tools Setup
 
-- [X] Install and configure code formatter (black, autopep8)
-- [X] Set up linter (pylint, flake8)
-- [X] Configure pre-commit hooks (optional)
-- [X] Set up Postman or Thunder Client for API testing
+- [x] Install and configure code formatter (black, autopep8)
+- [x] Set up linter (pylint, flake8)
+- [x] Configure pre-commit hooks (optional)
+- [x] Set up Postman or Thunder Client for API testing
 
 ---
 
@@ -80,67 +80,67 @@
 
 #### Understanding Bandobast Operations
 
-- [X] Research definition and scope of bandobast (special security arrangements)
-- [X] Identify typical bandobast scenarios:
+- [x] Research definition and scope of bandobast (special security arrangements)
+- [x] Identify typical bandobast scenarios:
   - VIP movements and protocols
   - Public events (rallies, festivals, sports)
   - Religious gatherings
   - Political meetings
   - Emergency situations
-- [X] Document key security concerns during bandobast:
+- [x] Document key security concerns during bandobast:
   - Crowd management challenges
   - Route security requirements
   - Communication coordination needs
   - Resource allocation issues
-- [X] Note personnel roles: field officers, control room, supervisors
-- [X] Understand timing: pre-event planning, live monitoring, post-event review
+- [x] Note personnel roles: field officers, control room, supervisors
+- [x] Understand timing: pre-event planning, live monitoring, post-event review
 
 #### Understanding Routine Patrolling
 
-- [X] Research different types of patrol:
+- [x] Research different types of patrol:
   - Beat patrol (fixed area)
   - Mobile patrol (vehicle-based)
   - Foot patrol
   - Nakabandi (checkpoints)
-- [X] Identify patrol objectives:
+- [x] Identify patrol objectives:
   - Crime prevention through visibility
   - Community engagement
   - Suspicious activity detection
   - Emergency response readiness
-- [X] Document current pain points:
+- [x] Document current pain points:
   - Manual log entries
   - Delayed incident reporting
   - Limited situational awareness
   - Post-shift report burden
-- [X] Understand patrol data: routes, timings, incidents, observations
+- [x] Understand patrol data: routes, timings, incidents, observations
 
 #### Identifying Realistic AI Use Cases
 
-- [X] List where AI can genuinely help:
+- [x] List where AI can genuinely help:
   - Automated crowd density monitoring
   - Unusual activity flagging
   - Pattern recognition in incidents
   - Intelligent report summarization
   - Historical data insights
-- [X] List what AI should NOT do (avoid over-promising):
+- [x] List what AI should NOT do (avoid over-promising):
   - Replace human judgment
   - Predict specific crimes
   - Make enforcement decisions
   - Identify individuals without context
-- [X] Document ethical boundaries and privacy concerns
+- [x] Document ethical boundaries and privacy concerns
 
 #### Understanding False Positive Risks
 
-- [X] Research consequences of false alerts:
+- [x] Research consequences of false alerts:
   - Officer alert fatigue
   - Wasted resources on false alarms
   - Reduced trust in system
   - Potential public panic
-- [X] Identify high-risk false positive scenarios:
+- [x] Identify high-risk false positive scenarios:
   - Normal crowds flagged as surges
   - Legitimate objects flagged as suspicious
   - Routine activities flagged as unusual
-- [X] Plan mitigation strategies:
+- [x] Plan mitigation strategies:
   - Conservative thresholds
   - Confidence score requirements
   - Human verification requirements
@@ -148,13 +148,13 @@
 
 #### Research Documentation
 
-- [X] Create RESEARCH.md file in /docs/ folder
-- [X] Write 2-3 paragraph summary of bandobast operations
-- [X] Write 2-3 paragraph summary of patrolling needs
-- [X] Document 5-7 realistic AI use cases with justification
-- [X] List 3-5 "anti-patterns" (what NOT to build)
-- [X] Include references to any sources consulted
-- [X] Add notes on ethical considerations
+- [x] Create RESEARCH.md file in /docs/ folder
+- [x] Write 2-3 paragraph summary of bandobast operations
+- [x] Write 2-3 paragraph summary of patrolling needs
+- [x] Document 5-7 realistic AI use cases with justification
+- [x] List 3-5 "anti-patterns" (what NOT to build)
+- [x] Include references to any sources consulted
+- [x] Add notes on ethical considerations
 
 ---
 
@@ -164,27 +164,27 @@
 
 #### System Components Identification
 
-- [X] Define Input Layer components:
+- [x] Define Input Layer components:
   - Camera feed ingestion mechanism
   - Patrol log input system
   - Manual event entry interface
   - GPS/location data integration
-- [X] Define Processing Layer components:
+- [x] Define Processing Layer components:
   - Computer vision inference service
   - Event detection and classification
   - Anomaly detection engine
   - Alert generation system
-- [X] Define Storage Layer components:
+- [x] Define Storage Layer components:
   - Relational database (events, alerts, sessions)
   - Vector database (embeddings for RAG)
   - Media storage (images, video frames)
   - Cache layer (optional)
-- [X] Define Intelligence Layer components:
+- [x] Define Intelligence Layer components:
   - LLM inference service
   - RAG retrieval system
   - Summary generation engine
   - Pattern analysis module
-- [X] Define Integration Layer components:
+- [x] Define Integration Layer components:
   - REST API endpoints
   - Webhook handlers
   - CopMap integration interface
@@ -192,48 +192,48 @@
 
 #### Architecture Diagram Creation
 
-- [X] Create system architecture diagram showing:
+- [x] Create system architecture diagram showing:
   - All major components
   - Data flow directions
   - Communication protocols
   - External system integrations
-- [X] Add component responsibilities in diagram
-- [X] Show synchronous vs asynchronous operations
-- [X] Indicate scalability points
-- [X] Use standard notation (boxes, arrows, labels)
-- [X] Choose tool: draw.io, Lucidchart, Excalidraw, or Mermaid
-- [X] Export as PNG/SVG for documentation
+- [x] Add component responsibilities in diagram
+- [x] Show synchronous vs asynchronous operations
+- [x] Indicate scalability points
+- [x] Use standard notation (boxes, arrows, labels)
+- [x] Choose tool: draw.io, Lucidchart, Excalidraw, or Mermaid
+- [x] Export as PNG/SVG for documentation
 
 #### Data Flow Diagram Creation
 
-- [X] Map end-to-end data flow:
+- [x] Map end-to-end data flow:
   - Camera frame → CV processing → Event generation
   - Event → Alert engine → Notification
   - Patrol start → Activity logging → Summary generation
   - Query → RAG retrieval → LLM → Response
-- [X] Show decision points in flow
-- [X] Indicate data transformations
-- [X] Mark critical latency points
-- [X] Add error handling paths
+- [x] Show decision points in flow
+- [x] Indicate data transformations
+- [x] Mark critical latency points
+- [x] Add error handling paths
 
 #### API Architecture Design
 
-- [X] Design RESTful API structure
-- [X] Define resource endpoints (events, alerts, patrols, summaries)
-- [X] Plan request/response formats
-- [X] Define authentication/authorization approach
-- [X] Plan versioning strategy (v1, v2)
-- [X] Document rate limiting strategy
-- [X] Plan error response structure
+- [x] Design RESTful API structure
+- [x] Define resource endpoints (events, alerts, patrols, summaries)
+- [x] Plan request/response formats
+- [x] Define authentication/authorization approach
+- [x] Plan versioning strategy (v1, v2)
+- [x] Document rate limiting strategy
+- [x] Plan error response structure
 
 #### Deployment Architecture
 
-- [X] Define deployment model (single-node, distributed)
-- [X] Plan service containerization approach
-- [X] Design inter-service communication
-- [X] Plan configuration management
-- [X] Define monitoring and logging strategy
-- [X] Document scaling considerations
+- [x] Define deployment model (single-node, distributed)
+- [x] Plan service containerization approach
+- [x] Design inter-service communication
+- [x] Plan configuration management
+- [x] Define monitoring and logging strategy
+- [x] Document scaling considerations
 
 ---
 
@@ -243,7 +243,7 @@
 
 **Cameras Table**
 
-- [X] Define fields:
+- [x] Define fields:
   - id (primary key)
   - camera_name (string)
   - location_name (string)
@@ -253,12 +253,12 @@
   - installation_date
   - last_active_timestamp
   - metadata (JSON for additional info)
-- [X] Define indexes for performance
-- [X] Plan relationships with other tables
+- [x] Define indexes for performance
+- [x] Plan relationships with other tables
 
 **Events Table**
 
-- [X] Define fields:
+- [x] Define fields:
   - id (primary key)
   - camera_id (foreign key)
   - timestamp
@@ -267,13 +267,13 @@
   - data (JSON with detection details)
   - processed (boolean)
   - created_at
-- [X] Plan partitioning strategy for scale
-- [X] Define indexes on timestamp, camera_id, event_type
-- [X] Design JSON structure for data field
+- [x] Plan partitioning strategy for scale
+- [x] Define indexes on timestamp, camera_id, event_type
+- [x] Design JSON structure for data field
 
 **Alerts Table**
 
-- [X] Define fields:
+- [x] Define fields:
   - id (primary key)
   - event_id (foreign key, nullable)
   - alert_type (string)
@@ -286,12 +286,12 @@
   - acknowledged_at (timestamp, nullable)
   - created_at
   - expires_at (nullable)
-- [X] Plan alert lifecycle management
-- [X] Define compound indexes for queries
+- [x] Plan alert lifecycle management
+- [x] Define compound indexes for queries
 
 **Patrol Sessions Table**
 
-- [X] Define fields:
+- [x] Define fields:
   - id (primary key)
   - officer_id (string)
   - officer_name (string)
@@ -302,12 +302,12 @@
   - incidents_count (integer)
   - distance_covered (float, km)
   - created_at
-- [X] Plan session tracking mechanism
-- [X] Define relationship with events
+- [x] Plan session tracking mechanism
+- [x] Define relationship with events
 
 **Summaries Table**
 
-- [X] Define fields:
+- [x] Define fields:
   - id (primary key)
   - summary_type (patrol/bandobast/daily)
   - reference_id (patrol_session_id or date)
@@ -316,30 +316,30 @@
   - risk_score (float 0-1)
   - generated_at
   - metadata (JSON)
-- [X] Plan storage optimization for long text
-- [X] Define retention policy
+- [x] Plan storage optimization for long text
+- [x] Define retention policy
 
 #### Database Diagram Creation
 
-- [X] Create ER diagram showing all tables
-- [X] Show primary and foreign key relationships
-- [X] Indicate cardinality (one-to-many, etc.)
-- [X] Add field types and constraints
-- [X] Mark indexed fields
-- [X] Use crow's foot notation or similar
-- [X] Export as image for documentation
+- [x] Create ER diagram showing all tables
+- [x] Show primary and foreign key relationships
+- [x] Indicate cardinality (one-to-many, etc.)
+- [x] Add field types and constraints
+- [x] Mark indexed fields
+- [x] Use crow's foot notation or similar
+- [x] Export as image for documentation
 
 #### Vector Database Design
 
-- [X] Choose vector DB (ChromaDB, FAISS, or Pinecone)
-- [X] Design collection structure:
+- [x] Choose vector DB (ChromaDB, FAISS, or Pinecone)
+- [x] Design collection structure:
   - patrol_logs collection
   - alert_history collection
   - location_context collection
-- [X] Plan metadata schema for filtering
-- [X] Define embedding dimensions (384 for MiniLM)
-- [X] Design retrieval query patterns
-- [X] Plan periodic reindexing strategy
+- [x] Plan metadata schema for filtering
+- [x] Define embedding dimensions (384 for MiniLM)
+- [x] Design retrieval query patterns
+- [x] Plan periodic reindexing strategy
 
 ---
 
@@ -347,19 +347,19 @@
 
 #### Technology Stack Justification
 
-- [X] Document CV model choice:
+- [x] Document CV model choice:
   - Why YOLOv8 (speed, accuracy, ease of use)
   - Why not Faster R-CNN or other models
   - Trade-offs: accuracy vs speed
-- [X] Document backend framework choice:
+- [x] Document backend framework choice:
   - Why FastAPI (async, auto-docs, modern)
   - Why not Flask or Django
   - Performance considerations
-- [X] Document database choice:
+- [x] Document database choice:
   - Why PostgreSQL or SQLite
   - Trade-offs: features vs simplicity
   - Scale considerations
-- [X] Document LLM choice:
+- [x] Document LLM choice:
   - Why local model (Ollama) vs API (GPT-4)
   - Cost implications
   - Latency trade-offs
@@ -367,31 +367,31 @@
 
 #### Design Trade-offs Documentation
 
-- [X] Frame sampling vs real-time streaming:
+- [x] Frame sampling vs real-time streaming:
   - Decision: Frame sampling every 2-5 seconds
   - Reason: Cost, computational efficiency
   - Trade-off: Slight delay in detection
-- [X] Rule-based vs ML-based anomaly detection:
+- [x] Rule-based vs ML-based anomaly detection:
   - Decision: Rule-based heuristics
   - Reason: No training data, interpretability
   - Trade-off: Less sophisticated detection
-- [X] Synchronous vs asynchronous processing:
+- [x] Synchronous vs asynchronous processing:
   - Decision: Async for CV, sync for API
   - Reason: Non-blocking operations
   - Implementation complexity
-- [X] Local deployment vs cloud:
+- [x] Local deployment vs cloud:
   - Decision: Local/single-node deployment
   - Reason: Data privacy, cost
   - Trade-off: Limited scalability
 
 #### Create Trade-offs Document
 
-- [X] Create TRADE_OFFS.md in /docs/
-- [X] List each major decision
-- [X] Explain reasoning for each choice
-- [X] Document alternatives considered
-- [X] Note potential future improvements
-- [X] Be honest about limitations
+- [x] Create TRADE_OFFS.md in /docs/
+- [x] List each major decision
+- [x] Explain reasoning for each choice
+- [x] Document alternatives considered
+- [x] Note potential future improvements
+- [x] Be honest about limitations
 
 ---
 
@@ -401,17 +401,17 @@
 
 #### YOLOv8 Model Integration
 
-- [X] Download pre-trained YOLOv8 model (yolov8n.pt or yolov8s.pt)
-- [X] Create model loader class with singleton pattern
-- [X] Implement model initialization with error handling
-- [X] Configure inference parameters:
+- [x] Download pre-trained YOLOv8 model (yolov8n.pt or yolov8s.pt)
+- [x] Create model loader class with singleton pattern
+- [x] Implement model initialization with error handling
+- [x] Configure inference parameters:
   - Confidence threshold (e.g., 0.5)
   - IoU threshold for NMS (e.g., 0.45)
   - Image size (640x640)
   - Device (CPU/GPU auto-detection)
-- [X] Test model loading with sample image
-- [X] Document model parameters in config file
-- [X] **Add to Requirements:**
+- [x] Test model loading with sample image
+- [x] Document model parameters in config file
+- [x] **Add to Requirements:**
 
 ```
 onnxruntime  # For CPU
@@ -422,44 +422,44 @@ onnxruntime-gpu  # If GPU available
 
 Add these tasks under CV Implementation:
 
-- [X] Export YOLOv8 model to ONNX format (5 min)
-- [X] Install onnxruntime package
-- [X] Load ONNX model using onnxruntime.InferenceSession
-- [X] Benchmark: Compare PyTorch vs ONNX inference speed
-- [X] Document performance improvements in README
+- [x] Export YOLOv8 model to ONNX format (5 min)
+- [x] Install onnxruntime package
+- [x] Load ONNX model using onnxruntime.InferenceSession
+- [x] Benchmark: Compare PyTorch vs ONNX inference speed
+- [x] Document performance improvements in README
 
 #### Frame Extraction Module
 
-- [X] Create frame processor class
-- [X] Implement video file loading with OpenCV
-- [X] Add support for image file input
-- [X] Implement frame extraction at intervals:
+- [x] Create frame processor class
+- [x] Implement video file loading with OpenCV
+- [x] Add support for image file input
+- [x] Implement frame extraction at intervals:
   - Time-based sampling (every N seconds)
   - Frame-based sampling (every N frames)
   - Configurable via settings
-- [X] Add frame preprocessing:
+- [x] Add frame preprocessing:
   - Resize to model input size
   - Normalization
   - Format conversion (BGR to RGB)
-- [X] Implement error handling for corrupted files
-- [X] Add progress tracking for batch processing
+- [x] Implement error handling for corrupted files
+- [x] Add progress tracking for batch processing
 
 #### Object Detection Implementation
 
-- [X] Create object detector class wrapping YOLOv8
-- [X] Implement detection method accepting frame/image
-- [X] Parse YOLO output to structured format:
+- [x] Create object detector class wrapping YOLOv8
+- [x] Implement detection method accepting frame/image
+- [x] Parse YOLO output to structured format:
   - Class ID to class name mapping
   - Bounding box coordinates (x, y, w, h)
   - Confidence scores
   - Frame timestamp
-- [X] Filter detections by confidence threshold
-- [X] Focus on relevant classes:
+- [x] Filter detections by confidence threshold
+- [x] Focus on relevant classes:
   - Person (class 0)
   - Car, truck, bus (vehicles)
   - Backpack, suitcase (bags)
   - Any custom classes needed
-- [X] Implement visualization function:
+- [x] Implement visualization function:
   - Draw bounding boxes on frame
   - Add labels with confidence scores
   - Color-code by class type
@@ -467,28 +467,28 @@ Add these tasks under CV Implementation:
 
 #### Static Object Tracking Logic
 
-- [X] Design object tracking data structure:
+- [x] Design object tracking data structure:
   - Object ID
   - Class type
   - First seen timestamp
   - Last seen timestamp
   - Location (bounding box center)
   - Movement threshold
-- [X] Implement simple tracking algorithm:
+- [x] Implement simple tracking algorithm:
   - Match objects across frames by location
   - Calculate IoU (Intersection over Union)
   - Assign persistent IDs to objects
   - Track dwell time
-- [X] Add static object detection logic:
+- [x] Add static object detection logic:
   - Identify objects in same location across frames
   - Calculate stationary duration
   - Set threshold (e.g., 5 minutes)
   - Generate static object event
-- [X] Implement object removal logic (when object moves/disappears)
+- [x] Implement object removal logic (when object moves/disappears)
 
 #### Event Schema Definition
 
-- [X] Create Event data model with fields:
+- [x] Create Event data model with fields:
   - event_id (UUID)
   - timestamp (ISO format)
   - camera_id
@@ -496,29 +496,29 @@ Add these tasks under CV Implementation:
   - confidence_score
   - data (flexible JSON structure)
   - metadata
-- [X] Define event types:
+- [x] Define event types:
   - OBJECT_DETECTED
   - CROWD_DETECTED
   - STATIC_OBJECT
   - CROWD_SURGE
   - ROUTE_BLOCKED
-- [X] Create event builder/factory class
-- [X] Implement event validation
-- [X] Add event serialization (to JSON)
+- [x] Create event builder/factory class
+- [x] Implement event validation
+- [x] Add event serialization (to JSON)
 
 #### Testing and Sample Outputs
 
-- [X] Download 3-5 sample videos/images:
+- [x] Download 3-5 sample videos/images:
   - Crowd scenes
   - Vehicles and people
   - Static objects (bags)
   - Different lighting conditions
-- [X] Run detection pipeline on all samples
-- [X] Generate annotated output images
-- [X] Save detection events as JSON
-- [X] Verify accuracy and performance
-- [X] Document any issues or limitations
-- [X] Save outputs to /outputs/cv_samples/
+- [x] Run detection pipeline on all samples
+- [x] Generate annotated output images
+- [x] Save detection events as JSON
+- [x] Verify accuracy and performance
+- [x] Document any issues or limitations
+- [x] Save outputs to /outputs/cv_samples/
 
 ---
 
@@ -526,51 +526,51 @@ Add these tasks under CV Implementation:
 
 #### Person Counting Logic
 
-- [X] Create crowd analyzer class
-- [X] Implement person detection counter:
+- [x] Create crowd analyzer class
+- [x] Implement person detection counter:
   - Filter YOLO detections for "person" class
   - Count total persons per frame
   - Apply confidence filtering
   - Handle overlapping detections
-- [X] Implement spatial analysis:
+- [x] Implement spatial analysis:
   - Define camera coverage area (sqm)
   - Calculate people density (persons/sqm)
   - Divide frame into grid zones
   - Count persons per zone
-- [X] Add temporal aggregation:
+- [x] Add temporal aggregation:
   - Store counts in time-series buffer
   - Calculate rolling averages (1 min, 5 min windows)
   - Detect trends (increasing/decreasing)
 
 #### Crowd Density Classification
 
-- [X] Define density categories based on research:
+- [x] Define density categories based on research:
   - LOW: < 0.5 persons/sqm (normal)
   - MEDIUM: 0.5-2 persons/sqm (moderate)
   - HIGH: 2-4 persons/sqm (crowded)
   - CRITICAL: > 4 persons/sqm (dangerous)
-- [X] Implement classification function
-- [X] Add safety margin/buffer zones
-- [X] Consider camera angle and FOV adjustments
-- [X] Create density heatmap visualization (optional)
-- [X] Document classification thresholds with sources
+- [x] Implement classification function
+- [x] Add safety margin/buffer zones
+- [x] Consider camera angle and FOV adjustments
+- [x] Create density heatmap visualization (optional)
+- [x] Document classification thresholds with sources
 
 #### Crowd Surge Detection
 
-- [X] Implement surge detection algorithm:
+- [x] Implement surge detection algorithm:
   - Compare current density to baseline
   - Calculate rate of change (persons/minute)
   - Set surge threshold (e.g., 50% increase in 2 min)
   - Require sustained increase (not just spike)
-- [X] Add surge severity levels:
+- [x] Add surge severity levels:
   - Minor: 30-50% increase
   - Moderate: 50-100% increase
   - Major: >100% increase
-- [X] Implement false positive reduction:
+- [x] Implement false positive reduction:
   - Require minimum initial crowd size
   - Smooth out brief fluctuations
   - Debounce repeated alerts
-- [X] Generate surge event with context:
+- [x] Generate surge event with context:
   - Previous density
   - Current density
   - Rate of change
@@ -578,44 +578,44 @@ Add these tasks under CV Implementation:
 
 #### Time-Series Analysis
 
-- [X] Create time-series data structure for counts
-- [X] Implement sliding window calculations
-- [X] Add statistical measures:
+- [x] Create time-series data structure for counts
+- [x] Implement sliding window calculations
+- [x] Add statistical measures:
   - Mean crowd size over window
   - Standard deviation (volatility)
   - Peak crowd times
   - Trend direction
-- [X] Store historical data for comparison
-- [X] Generate time-series visualizations (line charts)
+- [x] Store historical data for comparison
+- [x] Generate time-series visualizations (line charts)
 
 #### Crowd Event Generation
 
-- [X] Define crowd event types:
+- [x] Define crowd event types:
   - CROWD_NORMAL
   - CROWD_HIGH_DENSITY
   - CROWD_SURGE
   - CROWD_DISPERSAL
-- [X] Implement event generation with metadata:
+- [x] Implement event generation with metadata:
   - Count statistics
   - Density level
   - Trend information
   - Zone-wise breakdown
   - Confidence score
-- [X] Add event deduplication logic
-- [X] Implement event priority scoring
+- [x] Add event deduplication logic
+- [x] Implement event priority scoring
 
 #### Testing and Validation
 
-- [X] Test with various crowd scenarios:
+- [x] Test with various crowd scenarios:
   - Empty areas (baseline)
   - Small groups (2-10 people)
   - Medium crowds (10-50 people)
   - Large crowds (50+ people)
   - Rapidly changing crowd sizes
-- [X] Validate density calculations
-- [X] Test surge detection sensitivity
-- [X] Generate sample crowd analysis reports
-- [X] Save test outputs to /outputs/crowd_analysis/
+- [x] Validate density calculations
+- [x] Test surge detection sensitivity
+- [x] Generate sample crowd analysis reports
+- [x] Save test outputs to /outputs/crowd_analysis/
 
 ---
 
@@ -623,33 +623,33 @@ Add these tasks under CV Implementation:
 
 #### Rule Engine Architecture
 
-- [X] Design rule-based system structure:
+- [x] Design rule-based system structure:
   - Rule definitions (conditions + actions)
   - Rule evaluator
   - Rule priority system
   - Rule configuration file
-- [X] Create base Rule class/interface
-- [X] Implement rule evaluation pipeline
-- [X] Add rule chaining support
-- [X] Design rule output format
+- [x] Create base Rule class/interface
+- [x] Implement rule evaluation pipeline
+- [x] Add rule chaining support
+- [x] Design rule output format
 
 #### Static Object Alert Rule
 
-- [X] Define rule: "Object stationary > threshold time"
-- [X] Set parameters:
+- [x] Define rule: "Object stationary > threshold time"
+- [x] Set parameters:
   - Time threshold: 5 minutes (configurable)
   - Allowed object classes: backpack, suitcase, handbag
   - Exclusion zones (where static objects are normal)
-- [X] Implement rule logic:
+- [x] Implement rule logic:
   - Check object tracking data
   - Calculate dwell time
   - Filter by object class
   - Check location against exclusions
-- [X] Set severity based on:
+- [x] Set severity based on:
   - Object type (bag = high, vehicle = low)
   - Location (sensitive area = high)
   - Time of day
-- [X] Generate alert with context:
+- [x] Generate alert with context:
   - Object class and location
   - First seen and current timestamp
   - Annotated image
@@ -657,21 +657,21 @@ Add these tasks under CV Implementation:
 
 #### Crowd Surge Alert Rule
 
-- [X] Define rule: "Rapid crowd density increase"
-- [X] Set parameters:
+- [x] Define rule: "Rapid crowd density increase"
+- [x] Set parameters:
   - Rate threshold: 50% increase in 2 minutes
   - Minimum initial crowd: 20 people
   - Critical density: > 3 persons/sqm
-- [X] Implement rule logic:
+- [x] Implement rule logic:
   - Evaluate crowd time-series data
   - Calculate rate of change
   - Check against thresholds
   - Assess safety risk
-- [X] Set severity:
+- [x] Set severity:
   - LOW: 30-50% increase
   - MEDIUM: 50-100% increase
   - HIGH: >100% increase or critical density
-- [X] Generate alert with:
+- [x] Generate alert with:
   - Current and previous counts
   - Rate of increase
   - Density level
@@ -679,87 +679,87 @@ Add these tasks under CV Implementation:
 
 #### Route Blockage Detection Rule
 
-- [X] Define rule: "Obstacle in designated route"
-- [X] Set parameters:
+- [x] Define rule: "Obstacle in designated route"
+- [x] Set parameters:
   - Define route zones (polygon coordinates)
   - Blocking object classes: vehicles, barriers
   - Blockage percentage threshold: 50%
-- [X] Implement rule logic:
+- [x] Implement rule logic:
   - Check detected objects in route zones
   - Calculate coverage percentage
   - Determine blockage severity
   - Consider time context (planned vs unplanned)
-- [X] Set severity based on:
+- [x] Set severity based on:
   - Route importance (VIP route = high)
   - Blockage extent
   - Event timing
-- [X] Generate alert with route visualization
+- [x] Generate alert with route visualization
 
 #### After-Hours Activity Rule
 
-- [X] Define rule: "Activity detected outside normal hours"
-- [X] Set parameters:
+- [x] Define rule: "Activity detected outside normal hours"
+- [x] Set parameters:
   - Normal hours: 6 AM - 10 PM (configurable)
   - Minimum activity threshold
   - Location-specific schedules
-- [X] Implement rule logic:
+- [x] Implement rule logic:
   - Check current time
   - Detect any significant activity (person/vehicle count)
   - Compare to baseline
   - Filter false positives (security personnel)
-- [X] Set severity: MEDIUM by default
-- [X] Generate alert with activity details
+- [x] Set severity: MEDIUM by default
+- [x] Generate alert with activity details
 
 #### Confidence Scoring System
 
-- [X] Implement confidence calculation per alert:
+- [x] Implement confidence calculation per alert:
   - Detection confidence (from CV model)
   - Rule match strength
   - Historical context
   - Environmental factors
-- [X] Combine factors into overall score (0-1)
-- [X] Set minimum confidence threshold for alerts (0.6)
-- [X] Document scoring formula
-- [X] Allow threshold adjustment per rule
+- [x] Combine factors into overall score (0-1)
+- [x] Set minimum confidence threshold for alerts (0.6)
+- [x] Document scoring formula
+- [x] Allow threshold adjustment per rule
 
 #### Alert Deduplication Logic
 
-- [X] Implement deduplication strategy:
+- [x] Implement deduplication strategy:
   - Track recent alerts by type and location
   - Set cooldown period (e.g., 5 minutes)
   - Suppress duplicate alerts within period
   - Update existing alert instead of creating new
-- [X] Add alert escalation logic:
+- [x] Add alert escalation logic:
   - Increase severity if condition persists
   - Send reminder alerts at intervals
   - Clear alerts when condition resolves
 
 #### Rule Configuration File
 
-- [X] Create YAML configuration for all rules
-- [X] Define structure:
+- [x] Create YAML configuration for all rules
+- [x] Define structure:
   - Rule name and description
   - Enable/disable flag
   - Parameters and thresholds
   - Severity levels
   - Alert message templates
-- [X] Implement config loader
-- [X] Add runtime rule reload capability
-- [X] Document configuration options
+- [x] Implement config loader
+- [x] Add runtime rule reload capability
+- [x] Document configuration options
 
 #### Testing Anomaly Detection
 
-- [X] Create test scenarios for each rule:
+- [x] Create test scenarios for each rule:
   - Static bag left for 10 minutes
   - Crowd doubling in 1 minute
   - Vehicle blocking route
   - Activity at 2 AM
-- [X] Validate rule triggering
-- [X] Test false positive scenarios
-- [X] Verify confidence scoring
-- [X] Test alert deduplication
-- [X] Generate test alert outputs
-- [X] Save to /outputs/anomaly_detection/
+- [x] Validate rule triggering
+- [x] Test false positive scenarios
+- [x] Verify confidence scoring
+- [x] Test alert deduplication
+- [x] Generate test alert outputs
+- [x] Save to /outputs/anomaly_detection/
 
 ---
 
@@ -769,110 +769,110 @@ Add these tasks under CV Implementation:
 
 #### Database Selection and Setup
 
-- [X] Choose database: PostgreSQL (production) or SQLite (development)
-- [X] Install database (or use containerized version)
-- [X] Create database instance
-- [X] Configure connection parameters in .env file:
+- [x] Choose database: PostgreSQL (production) or SQLite (development)
+- [x] Install database (or use containerized version)
+- [x] Create database instance
+- [x] Configure connection parameters in .env file:
   - Database URL
   - Username/password (if applicable)
   - Pool size and connection limits
-- [X] Test database connectivity
+- [x] Test database connectivity
 
 #### SQLAlchemy Setup
 
-- [X] Create database module structure
-- [X] Set up SQLAlchemy engine and session
-- [X] Configure connection pooling
-- [X] Create base model class
-- [X] Set up session management (dependency injection)
-- [X] Implement context managers for transactions
-- [X] Add database initialization function
+- [x] Create database module structure
+- [x] Set up SQLAlchemy engine and session
+- [x] Configure connection pooling
+- [x] Create base model class
+- [x] Set up session management (dependency injection)
+- [x] Implement context managers for transactions
+- [x] Add database initialization function
 
 #### Camera Model Implementation
 
-- [X] Create Camera model class
-- [X] Define all fields with appropriate types
-- [X] Add constraints (unique, not null)
-- [X] Implement table indexes
-- [X] Add timestamps (created_at, updated_at)
-- [X] Create helper methods:
+- [x] Create Camera model class
+- [x] Define all fields with appropriate types
+- [x] Add constraints (unique, not null)
+- [x] Implement table indexes
+- [x] Add timestamps (created_at, updated_at)
+- [x] Create helper methods:
   - to_dict() for serialization
   - Location validation
   - Status management
-- [X] Document model with docstrings
+- [x] Document model with docstrings
 
 #### Event Model Implementation
 
-- [X] Create Event model class
-- [X] Define all fields including JSON data field
-- [X] Set up foreign key to Camera
-- [X] Add indexes on frequently queried fields
-- [X] Implement enum for event_type
-- [X] Create helper methods:
+- [x] Create Event model class
+- [x] Define all fields including JSON data field
+- [x] Set up foreign key to Camera
+- [x] Add indexes on frequently queried fields
+- [x] Implement enum for event_type
+- [x] Create helper methods:
   - Serialization
   - Data validation
   - Confidence score validation
-- [X] Add table partitioning hints (for scale)
+- [x] Add table partitioning hints (for scale)
 
 #### Alert Model Implementation
 
-- [X] Define fields with severity enum
-- [X] Set up foreign key to Event (nullable)
-- [X] Add spatial indexes for lat/lon if supported
-- [X] Implement alert lifecycle methods:
+- [x] Define fields with severity enum
+- [x] Set up foreign key to Event (nullable)
+- [x] Add spatial indexes for lat/lon if supported
+- [x] Implement alert lifecycle methods:
   - acknowledge()
   - expire()
   - is_active()
-- [X] Add alert filtering helpers
-- [X] Create compound indexes for common queries
+- [x] Add alert filtering helpers
+- [x] Create compound indexes for common queries
 
 #### Patrol Session Model Implementation
 
-- [X] Create PatrolSession model class
-- [X] Define fields for officer and route tracking
-- [X] Implement status enum (active/completed)
-- [X] Add relationship to events
-- [X] Create helper methods:
+- [x] Create PatrolSession model class
+- [x] Define fields for officer and route tracking
+- [x] Implement status enum (active/completed)
+- [x] Add relationship to events
+- [x] Create helper methods:
   - start_session()
   - end_session()
   - add_incident()
   - calculate_duration()
-- [X] Add validation for route_data JSON
+- [x] Add validation for route_data JSON
 
 #### Summary Model Implementation
 
-- [X] Create Summary model class
-- [X] Define summary_type enum
-- [X] Implement flexible reference system
-- [X] Add full-text search index on content (if supported)
-- [X] Create JSON fields for structured data
-- [X] Add helper methods for retrieval
-- [X] Implement retention policy logic
+- [x] Create Summary model class
+- [x] Define summary_type enum
+- [x] Implement flexible reference system
+- [x] Add full-text search index on content (if supported)
+- [x] Create JSON fields for structured data
+- [x] Add helper methods for retrieval
+- [x] Implement retention policy logic
 
 #### Database Migration Setup
 
-- [ ] Install and configure Alembic
-- [ ] Initialize Alembic in project
-- [ ] Create initial migration for all models
-- [ ] Test migration up and down
-- [ ] Create seed data migration:
+- [x] Install and configure Alembic
+- [x] Initialize Alembic in project
+- [x] Create initial migration for all models
+- [x] Test migration up and down
+- [x] Create seed data migration:
   - 3-5 sample cameras
   - Sample locations
   - Initial configuration
-- [ ] Document migration commands
-- [ ] Create database reset script for development
+- [x] Document migration commands
+- [x] Create database reset script for development
 
 #### Database Utilities
 
-- [X] Create database initialization script
-- [X] Implement connection health check
-- [ ] Add database backup utility (optional)
-- [X] Create data seeding functions
-- [ ] Implement cleanup utilities:
+- [x] Create database initialization script
+- [x] Implement connection health check
+- [x] Add database backup utility (optional)
+- [x] Create data seeding functions
+- [x] Implement cleanup utilities:
   - Old events purge
   - Expired alerts cleanup
   - Summary retention management
-- [ ] Add database statistics queries
+- [x] Add database statistics queries
 
 ---
 
@@ -881,148 +881,160 @@ Add these tasks under CV Implementation:
 ### Task 4.1: Database Setup and Models (1 hour)
 
 #### Database Selection and Setup
-- [ ] Choose database: PostgreSQL (production) or SQLite (development)
-- [ ] Install database (or use containerized version)
-- [ ] Create database instance
-- [ ] Configure connection parameters in .env file:
+
+- [x] Choose database: PostgreSQL (production) or SQLite (development)
+- [x] Install database (or use containerized version)
+- [x] Create database instance
+- [x] Configure connection parameters in .env file:
   - Database URL
   - Username/password (if applicable)
   - Pool size and connection limits
-- [ ] Test database connectivity
+- [x] Test database connectivity
 
 #### SQLAlchemy Setup
-- [ ] Create database module structure
-- [ ] Set up SQLAlchemy engine and session
-- [ ] Configure connection pooling
-- [ ] Create base model class
-- [ ] Set up session management (dependency injection)
-- [ ] Implement context managers for transactions
-- [ ] Add database initialization function
+
+- [x] Create database module structure
+- [x] Set up SQLAlchemy engine and session
+- [x] Configure connection pooling
+- [x] Create base model class
+- [x] Set up session management (dependency injection)
+- [x] Implement context managers for transactions
+- [x] Add database initialization function
 
 #### Camera Model Implementation
-- [ ] Create Camera model class
-- [ ] Define all fields with appropriate types
-- [ ] Add constraints (unique, not null)
-- [ ] Implement table indexes
-- [ ] Add timestamps (created_at, updated_at)
-- [ ] Create helper methods:
+
+- [x] Create Camera model class
+- [x] Define all fields with appropriate types
+- [x] Add constraints (unique, not null)
+- [x] Implement table indexes
+- [x] Add timestamps (created_at, updated_at)
+- [x] Create helper methods:
   - to_dict() for serialization
   - Location validation
   - Status management
-- [ ] Document model with docstrings
+- [x] Document model with docstrings
 
 #### Event Model Implementation
-- [ ] Create Event model class
-- [ ] Define all fields including JSON data field
-- [ ] Set up foreign key to Camera
-- [ ] Add indexes on frequently queried fields
-- [ ] Implement enum for event_type
-- [ ] Create helper methods:
+
+- [x] Create Event model class
+- [x] Define all fields including JSON data field
+- [x] Set up foreign key to Camera
+- [x] Add indexes on frequently queried fields
+- [x] Implement enum for event_type
+- [x] Create helper methods:
   - Serialization
   - Data validation
   - Confidence score validation
-- [ ] Add table partitioning hints (for scale)
+- [x] Add table partitioning hints (for scale)
 
 #### Alert Model Implementation
-- [ ] Create Alert model class
-- [ ] Define fields with severity enum
-- [ ] Set up foreign key to Event (nullable)
-- [ ] Add spatial indexes for lat/lon if supported
-- [ ] Implement alert lifecycle methods:
+
+- [x] Create Alert model class
+- [x] Define fields with severity enum
+- [x] Set up foreign key to Event (nullable)
+- [x] Add spatial indexes for lat/lon if supported
+- [x] Implement alert lifecycle methods:
   - acknowledge()
   - expire()
   - is_active()
-- [ ] Add alert filtering helpers
-- [ ] Create compound indexes for common queries
+- [x] Add alert filtering helpers
+- [x] Create compound indexes for common queries
 
 #### Patrol Session Model Implementation
-- [ ] Create PatrolSession model class
-- [ ] Define fields for officer and route tracking
-- [ ] Implement status enum (active/completed)
-- [ ] Add relationship to events
-- [ ] Create helper methods:
+
+- [x] Create PatrolSession model class
+- [x] Define fields for officer and route tracking
+- [x] Implement status enum (active/completed)
+- [x] Add relationship to events
+- [x] Create helper methods:
   - start_session()
   - end_session()
   - add_incident()
   - calculate_duration()
-- [ ] Add validation for route_data JSON
+- [x] Add validation for route_data JSON
 
 #### Summary Model Implementation
-- [ ] Create Summary model class
-- [ ] Define summary_type enum
-- [ ] Implement flexible reference system
-- [ ] Add full-text search index on content (if supported)
-- [ ] Create JSON fields for structured data
-- [ ] Add helper methods for retrieval
-- [ ] Implement retention policy logic
+
+- [x] Create Summary model class
+- [x] Define summary_type enum
+- [x] Implement flexible reference system
+- [x] Add full-text search index on content (if supported)
+- [x] Create JSON fields for structured data
+- [x] Add helper methods for retrieval
+- [x] Implement retention policy logic
 
 #### Database Migration Setup
-- [ ] Install and configure Alembic
-- [ ] Initialize Alembic in project
-- [ ] Create initial migration for all models
-- [ ] Test migration up and down
-- [ ] Create seed data migration:
+
+- [x] Install and configure Alembic
+- [x] Initialize Alembic in project
+- [x] Create initial migration for all models
+- [x] Test migration up and down
+- [x] Create seed data migration:
   - 3-5 sample cameras
   - Sample locations
   - Initial configuration
-- [ ] Document migration commands
-- [ ] Create database reset script for development
+- [x] Document migration commands
+- [x] Create database reset script for development
 
 #### Database Utilities
-- [ ] Create database initialization script
-- [ ] Implement connection health check
-- [ ] Add database backup utility (optional)
-- [ ] Create data seeding functions
-- [ ] Implement cleanup utilities:
+
+- [x] Create database initialization script
+- [x] Implement connection health check
+- [x] Add database backup utility (optional)
+- [x] Create data seeding functions
+- [x] Implement cleanup utilities:
   - Old events purge
   - Expired alerts cleanup
   - Summary retention management
-- [ ] Add database statistics queries
+- [x] Add database statistics queries
 
 ---
 
 ### Task 4.2: FastAPI Application Structure (1.5 hours)
 
 #### FastAPI App Initialization
-- [ ] Create main FastAPI application instance
-- [ ] Configure CORS middleware
-- [ ] Set up exception handlers
-- [ ] Add request logging middleware
-- [ ] Configure API metadata (title, description, version)
-- [ ] Set up API versioning (/api/v1)
-- [ ] Create startup and shutdown event handlers
-- [ ] Implement health check endpoint
+
+- [x] Create main FastAPI application instance
+- [x] Configure CORS middleware
+- [x] Set up exception handlers
+- [x] Add request logging middleware
+- [x] Configure API metadata (title, description, version)
+- [x] Set up API versioning (/api/v1)
+- [x] Create startup and shutdown event handlers
+- [x] Implement health check endpoint
 
 #### Pydantic Schemas Creation
-- [ ] Create schemas module
-- [ ] Define request schemas:
+
+- [x] Create schemas module
+- [x] Define request schemas:
   - EventIngestRequest
   - AlertAcknowledgeRequest
   - PatrolStartRequest
   - PatrolEndRequest
   - SummaryGenerateRequest
-- [ ] Define response schemas:
+- [x] Define response schemas:
   - EventResponse
   - AlertResponse
   - PatrolSessionResponse
   - SummaryResponse
   - ErrorResponse
-- [ ] Add validation rules:
+- [x] Add validation rules:
   - Field constraints (min/max)
   - Custom validators
   - Regex patterns
-- [ ] Implement schema inheritance for common fields
-- [ ] Add example values for documentation
+- [x] Implement schema inheritance for common fields
+- [x] Add example values for documentation
 
 #### Events API Endpoints
-- [ ] Create events router
-- [ ] Implement POST /api/v1/events/ingest:
+
+- [x] Create events router
+- [x] Implement POST /api/v1/events/ingest:
   - Accept event data
   - Validate schema
   - Store in database
   - Trigger alert engine
   - Return event ID
-- [ ] Implement GET /api/v1/events:
+- [x] Implement GET /api/v1/events:
   - Support filtering by:
     - camera_id
     - event_type
@@ -1030,128 +1042,136 @@ Add these tasks under CV Implementation:
     - processed status
   - Add pagination
   - Return sorted results
-- [ ] Implement GET /api/v1/events/{event_id}:
+- [x] Implement GET /api/v1/events/{event_id}:
   - Retrieve single event
   - Include related data
   - Handle not found
-- [ ] Add request validation and error handling
-- [ ] Document with OpenAPI descriptions
+- [x] Add request validation and error handling
+- [x] Document with OpenAPI descriptions
 
 #### Alerts API Endpoints
-- [ ] Create alerts router
-- [ ] Implement GET /api/v1/alerts:
+
+- [x] Create alerts router
+- [x] Implement GET /api/v1/alerts:
   - Filter by severity, status, date
   - Support location-based queries
   - Add pagination and sorting
   - Return alert count
-- [ ] Implement GET /api/v1/alerts/{alert_id}:
+- [x] Implement GET /api/v1/alerts/{alert_id}:
   - Retrieve alert details
   - Include related event data
   - Add location information
-- [ ] Implement POST /api/v1/alerts/{alert_id}/acknowledge:
+- [x] Implement POST /api/v1/alerts/{alert_id}/acknowledge:
   - Mark alert as acknowledged
   - Record acknowledging user
   - Timestamp action
   - Return updated alert
-- [ ] Implement DELETE /api/v1/alerts/{alert_id}:
+- [x] Implement DELETE /api/v1/alerts/{alert_id}:
   - Soft delete or mark as resolved
   - Require authorization
   - Log action
-- [ ] Add alert statistics endpoint
+- [x] Add alert statistics endpoint
 
 #### Patrol API Endpoints
-- [ ] Create patrol router
-- [ ] Implement POST /api/v1/patrol/start:
+
+- [x] Create patrol router
+- [x] Implement POST /api/v1/patrol/start:
   - Create new patrol session
   - Validate officer ID
   - Store initial location
   - Return session ID
-- [ ] Implement POST /api/v1/patrol/end:
+- [x] Implement POST /api/v1/patrol/end:
   - End active session
   - Calculate duration and distance
   - Trigger summary generation
   - Return session summary
-- [ ] Implement GET /api/v1/patrol/sessions:
+- [x] Implement GET /api/v1/patrol/sessions:
   - List patrol sessions
   - Filter by officer, date, status
   - Add pagination
-- [ ] Implement GET /api/v1/patrol/{session_id}:
+- [x] Implement GET /api/v1/patrol/{session_id}:
   - Retrieve session details
   - Include all events during patrol
   - Show route if available
   - Calculate statistics
-- [ ] Implement POST /api/v1/patrol/{session_id}/event:
+- [x] Implement POST /api/v1/patrol/{session_id}/event:
   - Add event to patrol session
   - Link event to session
   - Update session statistics
 
 #### Summaries API Endpoints
-- [ ] Create summaries router
-- [ ] Implement POST /api/v1/summaries/generate:
+
+- [x] Create summaries router
+- [x] Implement POST /api/v1/summaries/generate:
   - Accept summary type and parameters
   - Trigger async summary generation
   - Return job ID or summary
   - Handle errors gracefully
-- [ ] Implement GET /api/v1/summaries:
+- [x] Implement GET /api/v1/summaries:
   - List summaries by type, date
   - Support search/filtering
   - Add pagination
   - Return metadata only
-- [ ] Implement GET /api/v1/summaries/{summary_id}:
+- [x] Implement GET /api/v1/summaries/{summary_id}:
   - Retrieve full summary content
   - Include key insights
   - Show generation metadata
   - Format for readability
 
 #### Error Handling and Validation
-- [ ] Create custom exception classes:
+
+- [x] Create custom exception classes:
   - ValidationError
   - NotFoundError
   - DatabaseError
   - ExternalServiceError
-- [ ] Implement global exception handler
-- [ ] Add structured error responses:
+- [x] Implement global exception handler
+- [x] Add structured error responses:
   - Consistent JSON format
   - Error codes and messages
   - Detailed validation errors
   - Stack traces (dev mode only)
-- [ ] Add request validation middleware
-- [ ] Implement retry logic for database operations
-- [ ] Add timeout handling for long operations
+- [x] Add request validation middleware
+- [x] Implement retry logic for database operations
+- [x] Add timeout handling for long operations
 
 #### Authentication and Security (Optional but Recommended)
-- [ ] Implement API key authentication for endpoints
-- [ ] Add rate limiting to prevent abuse
-- [ ] Implement CORS properly for frontend integration
-- [ ] Add request ID tracking for debugging
-- [ ] Sanitize inputs to prevent injection attacks
-- [ ] Add HTTPS enforcement in production config
-- [ ] Document security considerations
+
+- [x] Implement API key authentication for endpoints
+- [x] Add rate limiting to prevent abuse
+- [x] Implement CORS properly for frontend integration
+- [x] Add request ID tracking for debugging
+- [x] Sanitize inputs to prevent injection attacks
+- [x] Add HTTPS enforcement in production config
+- [x] Document security considerations
 
 #### API Documentation
-- [ ] Ensure all endpoints have OpenAPI descriptions
-- [ ] Add request/response examples for each endpoint
-- [ ] Document error responses
-- [ ] Add authentication documentation
-- [ ] Create usage examples
-- [ ] Test auto-generated Swagger UI at /docs
-- [ ] Test ReDoc UI at /redoc
-- [ ] Export OpenAPI spec as JSON/YAML
+
+- [x] Ensure all endpoints have OpenAPI descriptions
+- [x] Add request/response examples for each endpoint
+- [x] Document error responses
+- [x] Add authentication documentation
+- [x] Create usage examples
+- [x] Test auto-generated Swagger UI at /docs
+- [x] Test ReDoc UI at /redoc
+- [x] Export OpenAPI spec as JSON/YAML
 
 #### Testing API Endpoints
-- [ ] Test all endpoints manually with sample data
-- [ ] Verify request validation works correctly
-- [ ] Test error scenarios (invalid data, missing fields)
-- [ ] Check pagination and filtering
-- [ ] Verify database transactions commit properly
-- [ ] Test concurrent requests handling
-- [ ] Document any issues found
+
+- [x] Test all endpoints manually with sample data
+- [x] Verify request validation works correctly
+- [x] Test error scenarios (invalid data, missing fields)
+- [x] Check pagination and filtering
+- [x] Verify database transactions commit properly
+- [x] Test concurrent requests handling
+- [x] Document any issues found
 
 ---
 
 ### Task 4.3: Alert Engine Implementation (30 minutes)
 
 #### Alert Engine Core Logic
+
 - [ ] Create alert_engine module
 - [ ] Design alert generation pipeline:
   - Event ingestion
@@ -1167,6 +1187,7 @@ Add these tasks under CV Implementation:
 - [ ] Implement severity calculation logic
 
 #### Alert Deduplication System
+
 - [ ] Design deduplication strategy:
   - Track recent alerts by type and location
   - Define similarity criteria
@@ -1186,6 +1207,7 @@ Add these tasks under CV Implementation:
   - Route blockage: 15 minutes
 
 #### Alert Priority Scoring
+
 - [ ] Define priority factors:
   - Severity level weight (40%)
   - Location criticality weight (30%)
@@ -1201,6 +1223,7 @@ Add these tasks under CV Implementation:
 - [ ] Sort alerts by priority in API responses
 
 #### Notification Structure
+
 - [ ] Design notification payload format:
   - Alert ID and type
   - Severity and priority
@@ -1219,6 +1242,7 @@ Add these tasks under CV Implementation:
 - [ ] Implement notification logging
 
 #### CopMap Integration Endpoint
+
 - [ ] Create copmap_integration module
 - [ ] Design webhook payload for CopMap:
   - Follow CopMap API specification
@@ -1235,6 +1259,7 @@ Add these tasks under CV Implementation:
 - [ ] Create sample integration payloads
 
 #### Alert Lifecycle Management
+
 - [ ] Implement alert expiration:
   - Set TTL (time to live) per alert type
   - Auto-expire old alerts
@@ -1250,6 +1275,7 @@ Add these tasks under CV Implementation:
 - [ ] Implement cleanup job for old alerts
 
 #### Testing Alert Engine
+
 - [ ] Create test events that trigger each rule
 - [ ] Verify alerts are generated correctly
 - [ ] Test deduplication works as expected
@@ -1266,6 +1292,7 @@ Add these tasks under CV Implementation:
 ### Task 5.1: Vector Database Setup (1 hour)
 
 #### Vector DB Selection and Installation
+
 - [ ] Choose vector database:
   - ChromaDB (recommended: easy setup, local)
   - FAISS (alternative: faster, more complex)
@@ -1277,6 +1304,7 @@ Add these tasks under CV Implementation:
 - [ ] Test basic operations (add, query, delete)
 
 #### Embedding Model Setup
+
 - [ ] Select embedding model:
   - sentence-transformers/all-MiniLM-L6-v2 (recommended: 384 dims, fast)
   - sentence-transformers/all-mpnet-base-v2 (alternative: better quality)
@@ -1288,6 +1316,7 @@ Add these tasks under CV Implementation:
 - [ ] Document model choice and rationale
 
 #### Collection Structure Design
+
 - [ ] Design collections/indexes needed:
   - **patrol_logs**: Patrol session summaries and events
   - **alert_history**: Historical alerts and outcomes
@@ -1305,6 +1334,7 @@ Add these tasks under CV Implementation:
 - [ ] Document collection purposes
 
 #### Document Ingestion Pipeline
+
 - [ ] Create document preprocessor:
   - Convert events to text descriptions
   - Convert alerts to narrative format
@@ -1323,6 +1353,7 @@ Add these tasks under CV Implementation:
 - [ ] Implement incremental updates (avoid re-embedding)
 
 #### Ingestion from Database
+
 - [ ] Create data extraction queries:
   - Fetch completed patrol sessions
   - Get resolved alerts
@@ -1339,6 +1370,7 @@ Add these tasks under CV Implementation:
 - [ ] Create manual ingestion trigger endpoint
 
 #### Retrieval Implementation
+
 - [ ] Implement similarity search function:
   - Accept query text
   - Generate query embedding
@@ -1360,6 +1392,7 @@ Add these tasks under CV Implementation:
   - Limit total token count
 
 #### Retrieval Optimization
+
 - [ ] Implement relevance scoring:
   - Combine similarity score with recency
   - Weight by metadata importance
@@ -1375,6 +1408,7 @@ Add these tasks under CV Implementation:
 - [ ] Add caching for common queries
 
 #### Testing Vector Database
+
 - [ ] Ingest sample data (20-30 documents)
 - [ ] Test similarity search with various queries:
   - "patrol incidents in south zone"
@@ -1391,6 +1425,7 @@ Add these tasks under CV Implementation:
 ### Task 5.2: LLM Integration (1.5 hours)
 
 #### LLM Selection and Setup
+
 - [ ] Choose LLM approach:
   - **Ollama** with Llama 3.2 or Mistral (recommended: local, free, private)
   - **OpenAI API** (alternative: better quality, costs money)
@@ -1407,6 +1442,7 @@ Add these tasks under CV Implementation:
 - [ ] Document model choice and reasoning
 
 #### LLM Service Module
+
 - [ ] Create llm_service module
 - [ ] Implement LLM client wrapper:
   - Handle different backends (Ollama, OpenAI, etc.)
@@ -1425,6 +1461,7 @@ Add these tasks under CV Implementation:
 - [ ] Implement fallback mechanism if LLM fails
 
 #### Prompt Engineering
+
 - [ ] Design prompt template structure:
   - System message (role definition)
   - Context injection (RAG results)
@@ -1440,6 +1477,7 @@ Add these tasks under CV Implementation:
   - Guide format consistency
 
 #### Patrol Summary Prompt
+
 - [ ] Design patrol summary prompt template:
 
 ```
@@ -1466,6 +1504,7 @@ Output format:
 - [ ] Refine based on output quality
 
 #### Bandobast Risk Overview Prompt
+
 - [ ] Design bandobast analysis prompt:
 
 ```
@@ -1488,6 +1527,7 @@ Output format:
 - [ ] Test with bandobast scenarios
 
 #### Pattern Analysis Prompt
+
 - [ ] Design pattern detection prompt:
 
 ```
@@ -1510,6 +1550,7 @@ Output format:
 - [ ] Test pattern recognition quality
 
 #### Cost Optimization Strategies
+
 - [ ] Implement context window management:
   - Limit retrieved documents to top-k
   - Truncate long documents
@@ -1531,6 +1572,7 @@ Output format:
 - [ ] Document cost optimization approaches
 
 #### Output Parsing and Validation
+
 - [ ] Implement LLM response parser:
   - Extract structured data from text
   - Handle markdown formatting
@@ -1551,6 +1593,7 @@ Output format:
   - Check against retrieved context
 
 #### Testing LLM Integration
+
 - [ ] Test each prompt template with sample data
 - [ ] Verify output quality and relevance
 - [ ] Test with different LLM parameters
@@ -1565,6 +1608,7 @@ Output format:
 ### Task 5.3: Summary Generation Service (1 hour)
 
 #### Summary Service Architecture
+
 - [ ] Create summarizer module
 - [ ] Design summary generation pipeline:
   - Receive summary request
@@ -1580,6 +1624,7 @@ Output format:
 - [ ] Implement progress tracking
 
 #### Patrol Summary Generator
+
 - [ ] Implement patrol summary function:
   - Accept patrol_session_id
   - Query database for patrol details
@@ -1600,6 +1645,7 @@ Output format:
 - [ ] Store in summaries table
 
 #### Bandobast Risk Report Generator
+
 - [ ] Implement bandobast report function:
   - Accept event_id or date range
   - Gather all relevant data:
@@ -1624,6 +1670,7 @@ Output format:
 - [ ] Format as structured report
 
 #### Daily Intelligence Brief Generator
+
 - [ ] Implement daily brief function:
   - Accept date parameter
   - Aggregate all day's activities:
@@ -1643,6 +1690,7 @@ Output format:
 - [ ] Add comparison to previous day/week
 
 #### Insight Extraction Logic
+
 - [ ] Implement insight extraction from summaries:
   - Parse LLM output for key points
   - Extract recommendations
@@ -1658,6 +1706,7 @@ Output format:
 - [ ] Enable insight search and filtering
 
 #### Structured Output Formatting
+
 - [ ] Design summary JSON schema:
 
 ```json
@@ -1687,6 +1736,7 @@ Output format:
 - [ ] Implement multiple output formats (JSON, MD, PDF)
 
 #### Summary API Endpoints
+
 - [ ] Implement POST /api/v1/summaries/generate:
   - Accept summary type and parameters
   - Validate request
@@ -1708,6 +1758,7 @@ Output format:
 - [ ] Implement summary deletion/archival
 
 #### Caching and Performance
+
 - [ ] Implement summary caching:
   - Cache generated summaries
   - Set TTL based on summary type
@@ -1724,6 +1775,7 @@ Output format:
 - [ ] Monitor LLM call frequency and costs
 
 #### Testing Summary Generation
+
 - [ ] Create test data for each summary type:
   - Complete patrol session
   - Bandobast event with alerts
@@ -1746,6 +1798,7 @@ Output format:
 ### Task 6.1: CopMap Integration Documentation (30 minutes)
 
 #### Integration Architecture Design
+
 - [ ] Document integration approach:
   - Webhook-based push notifications
   - REST API for data queries
@@ -1762,6 +1815,7 @@ Output format:
 - [ ] Document error handling strategy
 
 #### Webhook Endpoint Specification
+
 - [ ] Define webhook payload structure:
 
 ```json
@@ -1785,6 +1839,7 @@ Output format:
 - [ ] Add idempotency requirements
 
 #### Alert Notification Format
+
 - [ ] Design alert notification payload:
   - Alert ID and type
   - Severity and priority
@@ -1803,6 +1858,7 @@ Output format:
 - [ ] Create payload validation schema
 
 #### Real-time Update Mechanism
+
 - [ ] Design real-time push strategy:
   - Webhook on alert creation
   - Webhook on alert acknowledgment
@@ -1819,6 +1875,7 @@ Output format:
 - [ ] Document websocket alternative (optional)
 
 #### Mock CopMap Receiver Implementation
+
 - [ ] Create mock_copmap_server module
 - [ ] Implement simple HTTP server:
   - Accept POST /webhook/alerts
@@ -1835,6 +1892,7 @@ Output format:
 - [ ] Document mock server usage
 
 #### Integration Testing Scenarios
+
 - [ ] Create test scenarios:
   - Generate alert → Verify webhook called
   - Start patrol → Verify map update
@@ -1849,6 +1907,7 @@ Output format:
 - [ ] Create integration test suite
 
 #### Sample Integration Payloads
+
 - [ ] Create sample_payloads directory
 - [ ] Generate example payloads:
   - alert_critical.json
@@ -1865,6 +1924,7 @@ Output format:
 ### Task 6.2: End-to-End Testing (45 minutes)
 
 #### Test Data Preparation
+
 - [ ] Collect or create test media:
   - 3-5 test videos (different scenarios)
   - 10-15 test images
@@ -1883,6 +1943,7 @@ Output format:
 #### Complete Flow Test Scenarios
 
 **Scenario 1: Crowd Monitoring**
+
 - [ ] Upload crowd video to system
 - [ ] Process with CV pipeline
 - [ ] Verify person detection works
@@ -1893,6 +1954,7 @@ Output format:
 - [ ] Document results with screenshots
 
 **Scenario 2: Static Object Detection**
+
 - [ ] Upload video with abandoned bag
 - [ ] Process frames at intervals
 - [ ] Verify object tracking works
@@ -1903,6 +1965,7 @@ Output format:
 - [ ] Save annotated image output
 
 **Scenario 3: Patrol Session**
+
 - [ ] Create patrol session via API
 - [ ] Simulate patrol events:
   - Process multiple camera feeds
@@ -1916,6 +1979,7 @@ Output format:
 - [ ] Retrieve summary via API
 
 **Scenario 4: Bandobast Event**
+
 - [ ] Set up bandobast event
 - [ ] Process multiple camera feeds
 - [ ] Generate crowd and alert data
@@ -1926,6 +1990,7 @@ Output format:
 - [ ] Test report retrieval
 
 **Scenario 5: Daily Intelligence Brief**
+
 - [ ] Accumulate day's worth of data:
   - Multiple patrols
   - Various alerts
@@ -1937,6 +2002,7 @@ Output format:
 - [ ] Test brief formatting
 
 #### API Integration Testing
+
 - [ ] Test all API endpoints with Postman:
   - Events endpoints (POST, GET)
   - Alerts endpoints (GET, acknowledge)
@@ -1951,6 +2017,7 @@ Output format:
 - [ ] Measure response times
 
 #### Performance Testing
+
 - [ ] Test CV pipeline performance:
   - Measure frames processed per second
   - Check memory usage
@@ -1968,6 +2035,7 @@ Output format:
 - [ ] Document performance metrics
 
 #### Error and Edge Case Testing
+
 - [ ] Test error scenarios:
   - Invalid video format
   - Corrupted image files
@@ -1985,6 +2053,7 @@ Output format:
 - [ ] Test recovery mechanisms
 
 #### Sample Outputs Generation
+
 - [ ] Generate comprehensive output set:
   - 5-10 annotated images (detections)
   - 3-5 alert JSON examples
@@ -2002,6 +2071,7 @@ Output format:
 - [ ] Ensure outputs demonstrate system capabilities
 
 #### Bug Documentation
+
 - [ ] Track any issues found:
   - Bug description
   - Steps to reproduce
@@ -2017,6 +2087,7 @@ Output format:
 ### Task 6.3: System Integration Verification (15 minutes)
 
 #### Component Communication Testing
+
 - [ ] Verify all components communicate:
   - CV engine → Backend API
   - Backend → Database
@@ -2028,6 +2099,7 @@ Output format:
 - [ ] Test component failure recovery
 
 #### Configuration Validation
+
 - [ ] Review all configuration files:
   - Check all required variables set
   - Verify default values are sensible
@@ -2037,6 +2109,7 @@ Output format:
 - [ ] Verify configuration documentation
 
 #### Deployment Readiness Check
+
 - [ ] Verify Docker setup (if implemented):
   - Build all containers successfully
   - Test docker-compose up
@@ -2047,6 +2120,7 @@ Output format:
 - [ ] Verify setup instructions work
 
 #### Final System Walkthrough
+
 - [ ] Perform complete system demo:
   - Start all services
   - Upload test data
@@ -2066,6 +2140,7 @@ Output format:
 ### Task 7.1: Comprehensive README Creation (1.5 hours)
 
 #### README Structure Setup
+
 - [ ] Create well-organized README.md
 - [ ] Add table of contents
 - [ ] Use clear headings and sections
@@ -2076,6 +2151,7 @@ Output format:
   - Last commit
 
 #### Problem Understanding Section (300-400 words)
+
 - [ ] Write introduction explaining:
   - Current police operation challenges
   - Manual monitoring limitations
@@ -2103,6 +2179,7 @@ Output format:
   - Accountability
 
 #### System Architecture Section
+
 - [ ] Add system architecture diagram
 - [ ] Explain each major component:
   - Input layer (cameras, data sources)
@@ -2122,6 +2199,7 @@ Output format:
 - [ ] Document technology stack with justifications
 
 #### Technology Stack Section
+
 - [ ] Document all technologies used:
   - Programming language: Python 3.10+
   - CV/ML: YOLOv8, ONNX Runtime (if used), OpenCV
@@ -2139,6 +2217,7 @@ Output format:
 - [ ] Add installation requirements
 
 #### Implementation Details Section
+
 - [ ] Document what was implemented:
   - CV pipeline with object detection
   - Crowd analysis with density calculation
@@ -2158,6 +2237,7 @@ Output format:
 - [ ] List future enhancement possibilities
 
 #### Trade-offs and Design Decisions
+
 - [ ] Document major trade-offs:
   - **Frame sampling vs real-time**: Chose sampling for cost efficiency
   - **Rule-based vs ML anomaly**: Rules for interpretability and no training data
@@ -2170,6 +2250,7 @@ Output format:
 - [ ] Be transparent about constraints
 
 #### Setup and Installation Section
+
 - [ ] Write clear prerequisites:
   - Python version
   - System requirements (RAM, CPU)
@@ -2179,12 +2260,19 @@ Output format:
 
 ```markdown
 # 1. Clone repository
+
 # 2. Create virtual environment
+
 # 3. Install dependencies
+
 # 4. Set up database
+
 # 5. Configure environment variables
+
 # 6. Download models
+
 # 7. Initialize vector database
+
 # 8. Run migrations
 ```
 
@@ -2199,13 +2287,18 @@ Output format:
   - Where to get help
 
 #### Running the System Section
+
 - [ ] Document how to start services:
 
 ```markdown
 # Start database
+
 # Start backend API
+
 # Start CV processing
+
 # Start LLM service (if separate)
+
 # Start CopMap mock (for testing)
 ```
 
@@ -2215,6 +2308,7 @@ Output format:
 - [ ] Add monitoring and logging instructions
 
 #### API Documentation Section
+
 - [ ] List all API endpoints with descriptions
 - [ ] For each endpoint provide:
   - HTTP method
@@ -2230,6 +2324,7 @@ Output format:
 - [ ] Add cURL command examples
 
 #### LLM and RAG Strategy Section
+
 - [ ] Explain LLM selection:
   - Model chosen and why
   - Local vs API decision
@@ -2257,6 +2352,7 @@ Output format:
   - Cost reduction strategies
 
 #### Sample Outputs Section
+
 - [ ] Reference output directories
 - [ ] Add screenshots of key outputs:
   - Annotated detection images (embed 2-3)
@@ -2268,6 +2364,7 @@ Output format:
 - [ ] Link to full outputs folder
 
 #### Performance Metrics Section
+
 - [ ] Document system performance:
   - CV processing speed (FPS)
   - Alert generation latency
@@ -2283,6 +2380,7 @@ Output format:
 - [ ] Document tested at scale (number of cameras, events)
 
 #### Testing Section
+
 - [ ] Describe testing approach:
   - Unit tests (if implemented)
   - Integration tests
@@ -2294,6 +2392,7 @@ Output format:
 - [ ] Add test coverage (if measured)
 
 #### Known Limitations Section
+
 - [ ] Honestly document limitations:
   - CV accuracy depends on lighting
   - Rule-based detection has false positives
@@ -2306,6 +2405,7 @@ Output format:
 - [ ] Note what's acceptable for MVP
 
 #### Future Improvements Section
+
 - [ ] List potential enhancements:
   - Multi-camera tracking and correlation
   - Temporal behavior analysis
@@ -2322,18 +2422,21 @@ Output format:
 - [ ] Explain value of each enhancement
 
 #### Contributing and License Section
+
 - [ ] Add license information (MIT recommended)
 - [ ] Add contribution guidelines (if open to it)
 - [ ] Provide contact information
 - [ ] Link to issues or discussions
 
 #### Acknowledgments Section
+
 - [ ] Credit data sources used
 - [ ] Acknowledge libraries and frameworks
 - [ ] Reference research papers (if any)
 - [ ] Thank any helpers or reviewers
 
 #### Final README Polish
+
 - [ ] Proofread entire document
 - [ ] Ensure code blocks are formatted
 - [ ] Verify images display correctly
@@ -2347,6 +2450,7 @@ Output format:
 ### Task 7.2: Visual Diagrams Creation (1 hour)
 
 #### Diagram Tool Selection
+
 - [ ] Choose diagramming tool:
   - draw.io (recommended: free, web-based)
   - Excalidraw (alternative: simple, clean)
@@ -2357,6 +2461,7 @@ Output format:
 - [ ] Select appropriate icons/shapes
 
 #### System Architecture Diagram
+
 - [ ] Create high-level architecture diagram showing:
   - **Input Layer**:
     - Camera feeds icon
@@ -2386,6 +2491,7 @@ Output format:
 - [ ] Save to /docs/diagrams/architecture.png
 
 #### Database ER Diagram
+
 - [ ] Create entity-relationship diagram:
   - **Cameras** table with fields
   - **Events** table with fields
@@ -2406,6 +2512,7 @@ Output format:
 - [ ] Save to /docs/diagrams/database_schema.png
 
 #### Alert Generation Flow Diagram
+
 - [ ] Create flowchart for alert generation:
   - Start: New event received
   - Decision: Is anomaly rule met?
@@ -2424,6 +2531,7 @@ Output format:
 - [ ] Save to /docs/diagrams/alert_flow.png
 
 #### RAG Pipeline Diagram
+
 - [ ] Create RAG process diagram:
   - **Ingestion Phase**:
     - Historical data → Text conversion
@@ -2448,6 +2556,7 @@ Output format:
 - [ ] Save to /docs/diagrams/rag_pipeline.png
 
 #### CV Processing Pipeline Diagram
+
 - [ ] Create computer vision pipeline diagram:
   - Video/Image input
   - Frame extraction (sampling)
@@ -2464,6 +2573,7 @@ Output format:
 - [ ] Save to /docs/diagrams/cv_pipeline.png
 
 #### Sequence Diagrams (Optional but Impressive)
+
 - [ ] Create sequence diagram for patrol flow:
   - User → API: Start patrol
   - API → DB: Create session
@@ -2479,6 +2589,7 @@ Output format:
 - [ ] Export as PNG/SVG
 
 #### Deployment Diagram (Optional)
+
 - [ ] Create deployment architecture:
   - Single-node deployment
   - Container layout (if using Docker)
@@ -2489,6 +2600,7 @@ Output format:
 - [ ] Export as PNG/SVG
 
 #### Diagram Quality Check
+
 - [ ] Review all diagrams for:
   - Clarity and readability
   - Consistent styling
@@ -2505,6 +2617,7 @@ Output format:
 ### Task 7.3: Postman Collection Creation (30 minutes)
 
 #### Postman Setup
+
 - [ ] Open Postman (or install if needed)
 - [ ] Create new collection:
   - Name: "AI Patrolling System API"
@@ -2516,6 +2629,7 @@ Output format:
 - [ ] Add collection-level documentation
 
 #### Events Endpoints
+
 - [ ] Add POST /api/v1/events/ingest:
   - Description
   - Request body example (JSON)
@@ -2532,6 +2646,7 @@ Output format:
 - [ ] Test all endpoints and save responses
 
 #### Alerts Endpoints
+
 - [ ] Add GET /api/v1/alerts:
   - Filter parameters examples
   - Pagination examples
@@ -2545,6 +2660,7 @@ Output format:
 - [ ] Test and save example responses
 
 #### Patrol Endpoints
+
 - [ ] Add POST /api/v1/patrol/start:
   - Request body with officer details
   - Session creation response
@@ -2559,6 +2675,7 @@ Output format:
 - [ ] Test complete patrol workflow
 
 #### Summaries Endpoints
+
 - [ ] Add POST /api/v1/summaries/generate:
   - Request body for each summary type
   - Async job response
@@ -2571,6 +2688,7 @@ Output format:
 - [ ] Test summary generation and retrieval
 
 #### CopMap Integration Endpoints
+
 - [ ] Add POST /api/v1/copmap/alerts:
   - Webhook payload example
   - Integration format
@@ -2580,6 +2698,7 @@ Output format:
 - [ ] Test with mock server
 
 #### Collection Organization
+
 - [ ] Organize requests into folders:
   - Events
   - Alerts
@@ -2593,6 +2712,7 @@ Output format:
 - [ ] Add tests for status codes (optional)
 
 #### Documentation and Examples
+
 - [ ] Add detailed descriptions for each request
 - [ ] Include multiple examples per endpoint:
   - Success case
@@ -2605,6 +2725,7 @@ Output format:
 - [ ] Include authentication instructions
 
 #### Export and Testing
+
 - [ ] Test entire collection end-to-end
 - [ ] Verify all requests work correctly
 - [ ] Check environment variables are used
@@ -2619,20 +2740,22 @@ Output format:
 ## FINAL SUBMISSION CHECKLIST
 
 ### Code Repository Verification
+
 - [ ] All code is committed and pushed
 - [ ] Repository is public on GitHub
 - [ ] .gitignore properly excludes:
   - **pycache**/
-  - **.pyc
+  - \*\*.pyc
   - .env
   - venv/
-  - **.pt, *.onnx (models)
+  - \*_.pt, _.onnx (models)
   - test videos (if large)
 - [ ] No sensitive information in code or commits
 - [ ] No API keys or passwords
 - [ ] Clean commit history with meaningful messages
 
 ### Code Quality Check
+
 - [ ] Code is well-organized and modular
 - [ ] Functions and classes have docstrings
 - [ ] Variable names are descriptive
@@ -2643,6 +2766,7 @@ Output format:
 - [ ] Configuration is externalized
 
 ### Documentation Completeness
+
 - [ ] README.md is comprehensive and professional
 - [ ] All sections from template are covered
 - [ ] Problem understanding is clear and realistic
@@ -2656,6 +2780,7 @@ Output format:
 - [ ] Future improvements are listed
 
 ### Diagrams Quality
+
 - [ ] All diagrams are present:
   - System architecture
   - Database ER diagram
@@ -2669,6 +2794,7 @@ Output format:
 - [ ] Diagrams tell a clear story
 
 ### Postman Collection
+
 - [ ] Collection is complete with all endpoints
 - [ ] Each request has:
   - Clear description
@@ -2681,6 +2807,7 @@ Output format:
 - [ ] All requests tested and working
 
 ### Sample Outputs
+
 - [ ] Outputs directory is well-organized:
   - /cv_detections/
   - /alerts/
@@ -2697,6 +2824,7 @@ Output format:
 - [ ] Outputs demonstrate system value
 
 ### Video Quality
+
 - [ ] Video is 5-10 minutes long
 - [ ] Audio is clear and professional
 - [ ] Screen is visible and readable
@@ -2708,6 +2836,7 @@ Output format:
 - [ ] Link is in README
 
 ### Resume Update
+
 - [ ] Resume is updated with this project
 - [ ] Skills section includes:
   - Computer Vision (YOLOv8, ONNX)
@@ -2723,6 +2852,7 @@ Output format:
 - [ ] Resume is current and professional
 
 ### Email Preparation
+
 - [ ] Draft submission email with all required information:
   - Full name
   - Email address
@@ -2737,6 +2867,7 @@ Output format:
 - [ ] Thank reviewers for opportunity
 
 ### Final Testing
+
 - [ ] Fresh clone of repository works
 - [ ] Setup instructions can be followed
 - [ ] Sample data runs successfully

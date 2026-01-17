@@ -34,6 +34,21 @@ class AlertSeverity(PyEnum):
     CRITICAL = "critical"
 
 
+class AlertStatus(PyEnum):
+    ACTIVE = "active"
+    ACKNOWLEDGED = "acknowledged"
+    RESOLVED = "resolved"
+    EXPIRED = "expired"
+    AUTO_RESOLVED = "auto_resolved"
+
+
+class AlertPriority(PyEnum):
+    CRITICAL = "critical"
+    HIGH = "high"
+    MEDIUM = "medium"
+    LOW = "low"
+
+
 class PatrolStatus(PyEnum):
     ACTIVE = "active"
     COMPLETED = "completed"
@@ -98,19 +113,29 @@ class Alert(Base):
     event_id = Column(Integer, ForeignKey("events.id"), nullable=True)
     alert_type = Column(String(50), nullable=False)
     severity = Column(Enum(AlertSeverity), default=AlertSeverity.LOW)
+    status = Column(Enum(AlertStatus), default=AlertStatus.ACTIVE)
+    priority = Column(Enum(AlertPriority), default=AlertPriority.MEDIUM)
+    priority_score = Column(Float, default=0.5)
     message = Column(Text, nullable=False)
+    description = Column(Text, nullable=True)
     location_lat = Column(Float, nullable=True)
     location_lon = Column(Float, nullable=True)
+    occurrence_count = Column(Integer, default=1)
     acknowledged = Column(Boolean, default=False)
     acknowledged_by = Column(String(100), nullable=True)
     acknowledged_at = Column(DateTime, nullable=True)
+    resolved_at = Column(DateTime, nullable=True)
     expires_at = Column(DateTime, nullable=True)
+    metadata = Column(JSON, default=dict)
     created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
     event = relationship("Event", back_populates="alerts")
     
     __table_args__ = (
         Index("ix_alerts_severity", "severity"),
+        Index("ix_alerts_status", "status"),
+        Index("ix_alerts_priority", "priority"),
         Index("ix_alerts_ack", "acknowledged", "created_at"),
     )
 
