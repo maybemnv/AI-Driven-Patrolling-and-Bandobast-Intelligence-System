@@ -3,35 +3,35 @@
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 import logging
-import os
 import uuid
 
-from fastapi import FastAPI, Request, Depends
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from fastapi.openapi.utils import get_openapi
 
 from backend.routers import events, alerts, patrols, summaries, cameras, copmap, rag
-from backend.security import rate_limiter, verify_api_key
+from backend.security import rate_limiter
+from backend.exceptions import AppError, RateLimitError
+from config.settings import get_settings
 from database import create_db_engine, init_db
 
 log = logging.getLogger(__name__)
-
-ALLOWED_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000").split(",")
+settings = get_settings()
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     log.info("Starting application...")
-    engine = create_db_engine("sqlite:///./data/patrolling.db")
+    engine = create_db_engine(settings.database_url)
     init_db(engine)
     app.state.engine = engine
+    app.state.settings = settings
     yield
     log.info("Shutting down...")
 
 
 app = FastAPI(
-    title="AI-Driven Patrolling & Bandobast API",
+    title=settings.api_title,
     description="""
 ## Overview
 REST API for police patrol management, event detection, and intelligent alerting.
@@ -42,18 +42,8 @@ All endpoints require an API key passed via `X-API-Key` header.
 ## Rate Limiting
 - 100 requests per minute per client
 - `X-RateLimit-Remaining` header shows remaining quota
-
-## Error Codes
-| Code | Description |
-|------|-------------|
-| 400 | Invalid request data |
-| 401 | Missing API key |
-| 403 | Invalid API key |
-| 404 | Resource not found |
-| 429 | Rate limit exceeded |
-| 500 | Internal server error |
 """,
-    version="1.0.0",
+    version=settings.api_version,
     lifespan=lifespan,
     docs_url="/docs",
     redoc_url="/redoc",
@@ -61,7 +51,7 @@ All endpoints require an API key passed via `X-API-Key` header.
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=settings.cors_origins_list,
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE"],
     allow_headers=["*"],
@@ -80,7 +70,7 @@ async def request_tracking(request: Request, call_next):
         return JSONResponse(
             status_code=429,
             content={"detail": "Rate limit exceeded", "error_code": "RATE_LIMITED"},
-            headers={"Retry-After": "60", "X-Request-ID": request_id}
+            headers={"Retry-After": "60", "X-Request-ID": request_id},
         )
     
     response = await call_next(request)
@@ -93,6 +83,20 @@ async def request_tracking(request: Request, call_next):
     return response
 
 
+@app.exception_handler(AppError)
+async def app_error_handler(request: Request, exc: AppError):
+    request_id = getattr(request.state, "request_id", "unknown")
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={
+            "detail": exc.message,
+            "error_code": exc.error_code,
+            "request_id": request_id,
+            **exc.details,
+        },
+    )
+
+
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
     request_id = getattr(request.state, "request_id", "unknown")
@@ -102,48 +106,51 @@ async def global_exception_handler(request: Request, exc: Exception):
         content={
             "detail": "Internal server error",
             "error_code": "INTERNAL_ERROR",
-            "request_id": request_id
-        }
+            "request_id": request_id,
+        },
     )
 
 
+# Routers
 app.include_router(events.router, prefix="/api/v1/events", tags=["Events"])
 app.include_router(alerts.router, prefix="/api/v1/alerts", tags=["Alerts"])
 app.include_router(patrols.router, prefix="/api/v1/patrol", tags=["Patrol"])
 app.include_router(summaries.router, prefix="/api/v1/summaries", tags=["Summaries"])
 app.include_router(cameras.router, prefix="/api/v1/cameras", tags=["Cameras"])
-app.include_router(copmap.router, prefix="/api/v1/copmap", tags=["CopMap Integration"])
+app.include_router(copmap.router, prefix="/api/v1/copmap", tags=["CopMap"])
 app.include_router(rag.router, prefix="/api/v1", tags=["RAG"])
 
 
-@app.get("/health", tags=["System"], summary="Health check", description="Returns API health status")
+@app.get("/health", tags=["System"])
 async def health_check():
-    """Check if the API is running and healthy."""
+    """Health check endpoint."""
     return {
         "status": "healthy",
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "version": "1.0.0"
+        "version": settings.api_version,
     }
 
 
-@app.get("/api/v1", tags=["System"], summary="API info", description="Returns available endpoints")
-async def api_info():
-    """Get API version and available endpoints."""
+@app.get("/metrics", tags=["System"])
+async def metrics():
+    """Basic metrics endpoint."""
+    import psutil
+    
     return {
-        "name": "Patrolling & Bandobast API",
-        "version": "1.0.0",
-        "endpoints": ["/events", "/alerts", "/patrol", "/summaries", "/cameras"],
-        "docs": "/docs",
-        "redoc": "/redoc"
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "cpu_percent": psutil.cpu_percent(),
+        "memory_percent": psutil.virtual_memory().percent,
+        "uptime_seconds": int((datetime.now(timezone.utc) - app.state.start_time).total_seconds())
+        if hasattr(app.state, "start_time")
+        else 0,
     }
 
 
-@app.get("/api/v1/openapi.json", tags=["System"], include_in_schema=False)
-async def get_openapi_spec():
-    """Export OpenAPI specification as JSON."""
-    return get_openapi(
-        title=app.title,
-        version=app.version,
-        description=app.description,
-        routes=app.routes
-    )
+@app.get("/api/v1", tags=["System"])
+async def api_info():
+    """API information."""
+    return {
+        "name": settings.api_title,
+        "version": settings.api_version,
+        "docs": "/docs",
+    }
