@@ -144,7 +144,7 @@ class OllamaClient:
             return []
 
 
-def get_llm_client(model: str = "llama3.2") -> OllamaClient:
+def get_llm_client(model: str = "llama3.1:8b") -> OllamaClient:
     """Get configured LLM client."""
     settings = get_settings()
     return OllamaClient(

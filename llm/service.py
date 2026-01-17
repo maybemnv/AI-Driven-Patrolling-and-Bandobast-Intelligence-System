@@ -160,6 +160,6 @@ class LLMService:
         return self.client.is_available()
 
 
-def get_llm_service(model: str = "llama3.2") -> LLMService:
+def get_llm_service(model: str = "llama3.1:8b") -> LLMService:
     """Get LLM service instance."""
     return LLMService(model)

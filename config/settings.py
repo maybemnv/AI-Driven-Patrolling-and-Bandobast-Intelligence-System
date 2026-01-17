@@ -45,7 +45,7 @@ class Settings(BaseSettings):
     
     # Ollama LLM
     ollama_url: str = "http://localhost:11434"
-    ollama_model: str = "llama3.2"
+    ollama_model: str = "llama3.1:8b"
     
     @property
     def cors_origins_list(self) -> list[str]:
