@@ -5,7 +5,7 @@ import {
 } from 'lucide-react'
 import './App.css'
 
-const API_BASE = 'http://127.0.0.1:8000/api/v1'
+const API_BASE = '/api/v1'
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard')
@@ -23,7 +23,8 @@ function App() {
   }, [])
 
   const connectWebSocket = () => {
-    const socket = new WebSocket('ws://127.0.0.1:8000/api/v1/realtime-alerts/ws')
+    const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
+    const socket = new WebSocket(`${wsProtocol}//${window.location.host}/ws/realtime-alerts`)
     socket.onmessage = (event) => {
       const data = JSON.parse(event.data)
       if (data.type === 'new_alert') {
