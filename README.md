@@ -12,11 +12,14 @@ Computer vision and NLP-powered surveillance intelligence platform for police pa
 | **Alert Engine**      | Deduplication, priority scoring, lifecycle management |
 | **RAG Pipeline**      | FAISS vector store, semantic search, LLM context      |
 | **REST API**          | FastAPI with OpenAPI docs, rate limiting              |
+| **Dashboard**         | React-based real-time command center                  |
 
 ## Quick Start
 
+### 1. Backend Setup
+
 ```bash
-# Install
+# Clone repository
 git clone https://github.com/maybemnv/AI-Driven-Patrolling-and-Bandobast-Intelligence-System.git
 cd AI-Driven-Patrolling-and-Bandobast-Intelligence-System
 uv sync
@@ -29,7 +32,45 @@ uv run alembic upgrade head
 uv run uvicorn backend.main:app --host 127.0.0.1 --port 8000
 ```
 
-API docs at `http://127.0.0.1:8000/docs`
+API docs available at `http://127.0.0.1:8000/docs`
+
+### 2. Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Dashboard available at `http://localhost:3001` or `http://localhost:5173`.
+
+## Testing & Validation
+
+We provide a comprehensive suite of scripts for testing and benchmarking.
+
+### Integration Tests
+
+Run full end-to-end scenarios (Crowd, Static Object, Patrol, Summaries):
+
+```bash
+uv run python run_integration_tests.py
+```
+
+### Performance Benchmarks
+
+Measure CV FPS, DB Latency, and LLM Speed:
+
+```bash
+uv run python run_performance_tests.py
+```
+
+### Deployment Validation
+
+Verify environment variables, CopMap connectivity, and Docker config:
+
+```bash
+uv run python scripts/validate_deployment.py
+```
 
 ## Project Structure
 
@@ -37,50 +78,27 @@ API docs at `http://127.0.0.1:8000/docs`
 ├── backend/              # FastAPI application
 │   ├── main.py           # App entry point
 │   ├── routers/          # API endpoints
-│   └── security.py       # Auth & rate limiting
+│   └── copmap.py         # CopMap integration
+├── frontend/             # React Dashboard
 ├── database/             # Storage layer
-│   ├── models.py         # SQLAlchemy models
-│   └── vectordb.py       # FAISS vector store
 ├── rag/                  # RAG pipeline
-│   ├── embedder.py       # Sentence-transformers
-│   ├── ingestion.py      # Document ingestion
-│   └── retriever.py      # Semantic search
-├── src/                  # Computer vision
+├── src/                  # Computer vision components
 │   ├── detector/         # YOLOv8 + ONNX
 │   ├── crowd/            # Crowd analysis
-│   ├── alerts/           # Alert engine
-│   └── rules/            # Anomaly detection
-├── config/               # Configuration
-├── scripts/              # Utility scripts
-└── tests/                # Test suite
+│   └── events/           # Event generation
+├── scripts/              # Validation & Utility scripts
+├── outputs/              # Generated artifacts & reports
+└── docs/                 # Documentation
 ```
 
-## API Endpoints
+## Configuration
 
-| Endpoint                | Method | Description             |
-| ----------------------- | ------ | ----------------------- |
-| `/api/v1/events/ingest` | POST   | Ingest detection events |
-| `/api/v1/alerts`        | GET    | Query alerts            |
-| `/api/v1/patrol/start`  | POST   | Start patrol session    |
-| `/api/v1/rag/query`     | POST   | Semantic search         |
-| `/api/v1/rag/ingest`    | POST   | Ingest documents        |
-| `/health`               | GET    | Health check            |
+- **Environment**: Copy `.env.example` to `.env` and set `DATABASE_URL` and `GROQ_API_KEY`.
+- **Rules**: Edit `config/rules.yaml` for anomaly detection thresholds.
 
-## Demo Scripts
+## Troubleshooting
 
-```bash
-# Object detection demo
-uv run python run_detection_demo.py
-
-# Rules engine demo
-uv run python run_rules_demo.py
-
-# RAG system test
-uv run python -m scripts.test_rag
-
-# Run tests
-uv run pytest tests/ -v
-```
+See [KNOWN_ISSUES.md](KNOWN_ISSUES.md) for solutions to common problems (e.g., `onnxruntime` installation, missing columns).
 
 ## Technology Stack
 
@@ -88,31 +106,10 @@ uv run pytest tests/ -v
 | ------------ | ------------------------------ |
 | Detection    | YOLOv8n + ONNX Runtime         |
 | Backend      | FastAPI + Pydantic             |
+| Frontend     | React + Vite + Lucide          |
 | Database     | SQLAlchemy + SQLite/PostgreSQL |
 | Vector Store | FAISS                          |
-| Embeddings   | all-MiniLM-L6-v2 (384 dims)    |
-| LLM          | Ollama (llama3.1:8b)           |
-
-## Configuration
-
-Edit `config/rules.yaml` for anomaly detection:
-
-```yaml
-rules:
-  static_object:
-    enabled: true
-    time_threshold_seconds: 300
-  crowd_surge:
-    rate_threshold_percent: 50.0
-    window_seconds: 120
-```
-
-## Documentation
-
-- [Architecture](docs/architecture.md)
-- [API Design](docs/api_design.md)
-- [Database Schema](docs/database_schema.md)
-- [Research](docs/RESEARCH.md)
+| LLM          | Groq (Llama3-8b/70b)           |
 
 ## License
 
