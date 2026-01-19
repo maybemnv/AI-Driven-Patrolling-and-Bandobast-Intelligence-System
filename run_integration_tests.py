@@ -162,7 +162,12 @@ def scenario_static_object():
     time.sleep(1)
     res = requests.get(f"{API_BASE}/realtime-alerts?limit=5")
     if res.status_code == 200:
-        alerts = res.json().get("value", [])
+        data = res.json()
+        if isinstance(data, list):
+            alerts = data
+        else:
+            alerts = data.get("value", [])
+            
         static = [a for a in alerts if a["alert_type"] in ["static_object", "suspicious_object"]]
         if static:
             logger.info("SUCCESS: Static Object Alert generated")

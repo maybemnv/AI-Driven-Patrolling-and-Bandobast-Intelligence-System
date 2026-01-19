@@ -1,0 +1,21 @@
+{
+  "cv": {
+    "avg_fps": 24.99,
+    "avg_latency_ms": 40.01,
+    "p95_latency_ms": 40.38,
+    "memory_increase_mb": 95.76,
+    "cpu_usage_avg": 1133.72
+  },
+  "db": {
+    "avg_write_latency_ms": 3.25,
+    "avg_read_latency_ms": 4.49,
+    "min_read_ms": 3.86,
+    "max_read_ms": 9.71
+  },
+  "llm": {
+    "total_request_ms": 1630.16,
+    "api_reported_generation_ms": 867.65,
+    "tokens_generated": 1349,
+    "ms_per_token": 0.64
+  }
+}

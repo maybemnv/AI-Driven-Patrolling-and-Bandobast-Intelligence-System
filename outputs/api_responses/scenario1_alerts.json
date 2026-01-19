@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "alert_type": "crowd_surge",
+    "severity": "high",
+    "message": "High crowd density detected at Gate 5",
+    "status": "active",
+    "created_at": "2026-01-19T07:44:57.657865",
+    "location": "Gate 5"
+  }
+]
