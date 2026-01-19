@@ -298,7 +298,23 @@ function PatrolsPanel({ patrols, onRefresh }) {
 
 function SummariesPanel() {
   const [loading, setLoading] = useState(false)
-  const [result, setResult] = useState(null)
+  const [summaries, setSummaries] = useState([])
+  const [selectedSummary, setSelectedSummary] = useState(null)
+
+  useEffect(() => {
+    fetchSummaries()
+  }, [])
+
+  const fetchSummaries = async () => {
+    try {
+      const res = await fetch(`${API_BASE}/summaries?limit=10`)
+      const data = await res.json()
+      // API returns { items: [], ... } or list. Handle both.
+      setSummaries(data.items || data || [])
+    } catch (e) {
+      console.error('Fetch summaries error:', e)
+    }
+  }
 
   const generateBrief = async () => {
     setLoading(true)
@@ -309,7 +325,8 @@ function SummariesPanel() {
         body: JSON.stringify({})
       })
       const data = await res.json()
-      setResult(data)
+      setSelectedSummary(data)
+      fetchSummaries() // Refresh list
     } catch (e) {
       console.error(e)
     }
@@ -317,27 +334,71 @@ function SummariesPanel() {
   }
 
   return (
-    <div className="card">
-      <div className="card-header">
-        <h3 className="card-title">AI-Powered Summaries</h3>
-        <button className="btn btn-primary" onClick={generateBrief} disabled={loading}>
-          {loading ? 'Generating...' : 'Generate Daily Brief'}
-        </button>
+    <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+      <div className="card">
+        <div className="card-header">
+          <h3 className="card-title">AI-Powered Summaries</h3>
+          <button className="btn btn-primary" onClick={generateBrief} disabled={loading}>
+            {loading ? 'Generating...' : 'Generate New Brief'}
+          </button>
+        </div>
       </div>
-      
-      {result && (
-        <div style={{marginTop: '1rem', padding: '1rem', background: 'var(--bg-primary)', borderRadius: '0.5rem'}}>
-          <div style={{marginBottom: '0.5rem'}}>
-            <span className="badge badge-info">{result.summary_type}</span>
-            <span style={{marginLeft: '0.5rem', color: 'var(--text-muted)', fontSize: '0.875rem'}}>
-              {result.tokens_used} tokens • {Math.round(result.duration_ms)}ms
-            </span>
-          </div>
-          <div style={{whiteSpace: 'pre-wrap', color: 'var(--text-secondary)'}}>
-            {result.markdown || result.raw_text}
+
+      <div style={{display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '1rem'}}>
+        {/* List */}
+        <div className="card">
+          <h4 className="card-title" style={{marginBottom: '1rem'}}>History</h4>
+          <div style={{display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
+            {summaries.map(s => (
+              <div 
+                key={s.id} 
+                onClick={() => setSelectedSummary(s)}
+                style={{
+                  padding: '0.75rem', 
+                  background: selectedSummary?.id === s.id ? 'var(--bg-secondary)' : 'var(--bg-primary)',
+                  borderRadius: '0.5rem',
+                  cursor: 'pointer',
+                  border: '1px solid var(--border)'
+                }}
+              >
+                <div style={{fontWeight: 500}}>{s.summary_type}</div>
+                <div style={{fontSize: '0.8rem', color: 'var(--text-muted)'}}>
+                  {new Date(s.created_at).toLocaleString()}
+                </div>
+              </div>
+            ))}
+            {summaries.length === 0 && <p style={{color: 'var(--text-muted)'}}>No summaries found.</p>}
           </div>
         </div>
-      )}
+
+        {/* Detail */}
+        <div className="card">
+          {selectedSummary ? (
+            <>
+              <div className="card-header">
+                <div>
+                  <h3 className="card-title">{selectedSummary.summary_type}</h3>
+                  <div style={{fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.25rem'}}>
+                    {new Date(selectedSummary.created_at).toLocaleString()}
+                  </div>
+                </div>
+                {selectedSummary.tokens_used && (
+                  <span className="badge badge-info">
+                    {selectedSummary.tokens_used} tokens
+                  </span>
+                )}
+              </div>
+              <div style={{marginTop: '1rem', whiteSpace: 'pre-wrap', color: 'var(--text-secondary)', lineHeight: 1.6}}>
+                {selectedSummary.markdown || selectedSummary.raw_text}
+              </div>
+            </>
+          ) : (
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200px', color: 'var(--text-muted)'}}>
+              Select a summary to view details
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   )
 }
