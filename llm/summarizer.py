@@ -91,7 +91,7 @@ class SummaryGenerator:
     """Main summary generation service."""
     
     def __init__(self, model: str = "llama3.1:8b"):
-        self.llm = get_llm_service(model)
+        self.llm = get_llm_service()
         self.retriever = get_retriever()
     
     def generate_patrol_summary(
@@ -229,9 +229,31 @@ class SummaryGenerator:
             "daily_brief": SummaryType.DAILY,
         }
         
+        summary_type = type_map.get(generated.summary_type, SummaryType.DAILY)
+        patrol_session_id = None
+        reference_date = None
+        
+        if summary_type == SummaryType.PATROL and reference_id:
+            try:
+                patrol_session_id = int(reference_id)
+            except (ValueError, TypeError):
+                pass
+        elif summary_type == SummaryType.DAILY:
+            try:
+                if reference_id:
+                    reference_date = datetime.strptime(reference_id, "%Y-%m-%d")
+                else:
+                    reference_date = datetime.utcnow()
+            except (ValueError, TypeError):
+                reference_date = datetime.utcnow()
+        elif summary_type == SummaryType.BANDOBAST:
+            # For bandobast, we might not have a dedicated FK yet, or use reference_date
+            reference_date = datetime.utcnow()
+        
         summary = Summary(
-            summary_type=type_map.get(generated.summary_type, SummaryType.DAILY),
-            reference_id=reference_id,
+            summary_type=summary_type,
+            patrol_session_id=patrol_session_id,
+            reference_date=reference_date,
             content=generated.raw_text,
             risk_score=generated.content.get("risk_score", 0.0),
             generated_at=datetime.utcnow(),

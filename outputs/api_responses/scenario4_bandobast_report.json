@@ -1,0 +1,23 @@
+{
+  "summary_type": "bandobast",
+  "content": {
+    "risk_level": "UNKNOWN",
+    "concerns": [
+      "High foot traffic and crowd density at the Railway Station, which is a major transit hub with multiple entry points.",
+      "Presence of suspicious vehicle near market and minor crowd at temple in South Zone, indicating potential security threats.",
+      "Unattended bag detected near bus station platform 3, which could be a potential security risk.",
+      "Large crowd detected at festival ground exceeding 500 people, indicating a high risk of crowd surge.",
+      "Moderate crowds and pickpocket risk in South Zone Market Area.",
+      "Vehicle detected in pedestrian zone at Main Bazaar, indicating potential security threats."
+    ],
+    "resource_assessment": ":\n\n* Adequate security coverage is observed in the South Zone, with Officer Sharma completing a 4-hour shift covering 12 checkpoints.\n* Officer Singh assisted with crowd management during peak hours in Central Zone near the Railway Station.\n* Officer Patel completed a routine evening patrol in North Zone without any incidents reported.\n* However, the high foot traffic and crowd density at the Railway Station may require additional security resources to ensure continuous monitoring.",
+    "recommendations": [],
+    "risk_score": 0.5
+  },
+  "raw_text": "**Risk Level**: HIGH\n\n**Key Concerns**:\n\n* High foot traffic and crowd density at the Railway Station, which is a major transit hub with multiple entry points.\n* Presence of suspicious vehicle near market and minor crowd at temple in South Zone, indicating potential security threats.\n* Unattended bag detected near bus station platform 3, which could be a potential security risk.\n* Large crowd detected at festival ground exceeding 500 people, indicating a high risk of crowd surge.\n* Moderate crowds and pickpocket risk in South Zone Market Area.\n* Vehicle detected in pedestrian zone at Main Bazaar, indicating potential security threats.\n\n**Resource Assessment**:\n\n* Adequate security coverage is observed in the South Zone, with Officer Sharma completing a 4-hour shift covering 12 checkpoints.\n* Officer Singh assisted with crowd management during peak hours in Central Zone near the Railway Station.\n* Officer Patel completed a routine evening patrol in North Zone without any incidents reported.\n* However, the high foot traffic and crowd density at the Railway Station may require additional security resources to ensure continuous monitoring.\n\n**Recommendations**:\n\n1. **Increase Security Presence**: Deploy additional security personnel at the Railway Station to ensure continuous monitoring and crowd management during peak hours.\n2. **Enhance Surveillance**: Install additional CCTV cameras in the South Zone Market Area and Main Bazaar to improve surveillance and detect potential security threats.\n3. **Implement Crowd Management Strategies**: Develop and implement crowd management strategies to prevent crowd surge and ensure safe crowd movement at the Railway Station and festival ground.\n4. **Conduct Regular Security Drills**: Conduct regular security drills to ensure that security personnel are prepared to respond to potential security threats.\n5. **Review and Update Security Protocols**: Review and update security protocols to ensure that they are effective in preventing and responding to potential security threats.\n6. **Collaborate with Local Authorities**: Collaborate with local authorities to share intelligence and best practices in crowd management and security.",
+  "tokens_used": 1476,
+  "duration_ms": 695.3706999993301,
+  "success": true,
+  "error": null,
+  "markdown": "# Bandobast\n\n**Risk Level**: UNKNOWN\n**Risk Score**: 0.50"
+}
