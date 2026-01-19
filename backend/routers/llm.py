@@ -17,7 +17,7 @@ class PatrolSummaryRequest(BaseModel):
     officer_id: str
     duration: str
     distance_km: float
-    incidents_count: int
+    incidents_count: int 
     patrol_id: Optional[int] = None
 
 

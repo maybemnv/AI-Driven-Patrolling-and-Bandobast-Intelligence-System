@@ -118,8 +118,12 @@ class Alert(Base):
     priority_score = Column(Float, default=0.5)
     message = Column(Text, nullable=False)
     description = Column(Text, nullable=True)
+    location = Column(String(200), nullable=True)
+    latitude = Column(Float, nullable=True)
+    longitude = Column(Float, nullable=True)
     location_lat = Column(Float, nullable=True)
     location_lon = Column(Float, nullable=True)
+    source = Column(String(100), default="system")
     occurrence_count = Column(Integer, default=1)
     acknowledged = Column(Boolean, default=False)
     acknowledged_by = Column(String(100), nullable=True)
@@ -146,12 +150,23 @@ class PatrolSession(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     officer_id = Column(String(50), nullable=False, index=True)
     officer_name = Column(String(100), nullable=False)
+    zone = Column(String(100), nullable=True)
     start_time = Column(DateTime, nullable=False)
     end_time = Column(DateTime, nullable=True)
-    route_data = Column(JSON, default=list)  # GPS points
+    started_at = Column(DateTime, nullable=True)
+    ended_at = Column(DateTime, nullable=True)
+    start_latitude = Column(Float, nullable=True)
+    start_longitude = Column(Float, nullable=True)
+    end_latitude = Column(Float, nullable=True)
+    end_longitude = Column(Float, nullable=True)
+    current_latitude = Column(Float, nullable=True)
+    current_longitude = Column(Float, nullable=True)
+    route_data = Column(JSON, default=list)
     status = Column(Enum(PatrolStatus), default=PatrolStatus.ACTIVE)
     incidents_count = Column(Integer, default=0)
     distance_km = Column(Float, default=0.0)
+    notes = Column(Text, nullable=True)
+    summary = Column(Text, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     
     summaries = relationship("Summary", back_populates="patrol_session")
@@ -159,6 +174,7 @@ class PatrolSession(Base):
     __table_args__ = (
         Index("ix_patrols_officer", "officer_id", "start_time"),
         Index("ix_patrols_status", "status"),
+        Index("ix_patrols_zone", "zone"),
     )
 
 
